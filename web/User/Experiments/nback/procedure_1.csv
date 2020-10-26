@@ -1,5 +1,5 @@
 Item,Trial Type,Max Time,Text,Shuffle 1,Shuffle 2,survey,
-0,instruct,,,,off,,
+0,instruct,,attempt 2,,off,,
 0,survey,,,,,information sheet.csv,
 0,survey,,,,,consent_form.csv,
 0,instruct,user,"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>

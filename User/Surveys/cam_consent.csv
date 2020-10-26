@@ -1,0 +1,8 @@
+item_name,text,Type,Answers,Values,Optional,question_width,side_by_side,
+Instructions1,Please select the following statements if you agree with them. Please feel free to withdraw at any point.,Instruct,,,,,,
+cam_consent_1,"1. I confirm that I have read and understood the information sheet for the study. I have had the opportunity to consider the information, ask questions and have had these answered satisfactorily.",likert,Agree,1,No,70%,yes,
+cam_consent_2,2. I understand that my participation is voluntary and that I am free to withdraw at any time without giving any reason.,likert,Agree,1,No,70%,yes,
+cam_consent_3,"3. I understand that data collected during the study may be looked at by the academic collaborators Dr Mohammad Zia Ul Haq Katshu at the University of Nottingham, Dr Anthony Haffey at the University of Reading, Dr Christopher Retzler and Dr Jennifer Retzler at the University of Huddersfield. I give permission for the research team to have access to my data.",likert,Agree,1,No,70%,yes,
+cam_consent_4,4. I understand that my anonymized data might be shared with other researchers,likert,Agree,1,No,70%,yes,
+cam_consent_5,5. I am over 18 years of age and I agree to take part in this study,likert,Agree,1,No,70%,yes,
+,,,,,,,,

@@ -1,0 +1,4 @@
+Name,Notes,Stimuli,Procedure,fullscreen,welcome,participant_id,end_message,start_message,buffer,download_at_end,forward_at_end,
+condition_1,You can put more detailed notes in this field,stimuli_1.csv,procedure_1.csv,on,,on,,,5,on,,
+condition_2,You can put more detailed notes in this field,stimuli_1.csv,procedure_2.csv,on,,on,,,5,on,,
+,,,,,,,,,,,,

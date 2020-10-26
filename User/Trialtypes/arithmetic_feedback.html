@@ -1,0 +1,160 @@
+<style>
+.trial_no{
+  width:150px;
+  height:50px;
+}
+#everything{
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  width:600;
+  height:600;
+}
+#proceed_btn{
+  display:none;
+}
+td {
+  padding:10px;
+  margin:5px;
+}
+input{
+  float: right;
+  clear: both;
+  text-align: right;
+  letter-spacing: 1em;
+}
+.form-control {
+  display: inline-block;
+}
+</style>
+
+<div id="everything">
+  <h2 class="text-primary">{{row_1_tens}}{{row_1_units}} {{add_sub_mult}} {{row_2_tens}}{{row_2_units}}</h2>
+
+  <table>
+    <tr>
+      <td>
+        <h5>{{row_1_tens}}<u>{{row_1_units}}</u> {{add_sub_mult}} {{row_2_tens}}<u>{{row_2_units}}</u>:</h5>
+      </td>
+      <td>
+        <h5>{{row_1_units}} {{add_sub_mult}} {{row_2_units}}</h5>
+      </td>
+      <td>=</td>
+      <td>
+        <input type="number" id="row_1_answer" class="trial_no form-control pull-right"/>
+      </td>
+      <td>
+        <h3 id="feedback_1"></h3>
+      </td>
+    </tr>
+    <tr>
+      <td><h5>{{row_1_tens}}<u>{{row_1_units}}</u> {{add_sub_mult}} <u>{{row_2_tens}}</u>{{row_2_units}}: </h5></td>
+      <td><h5>{{row_1_units}} {{add_sub_mult}} {{row_2_tens}}0</h5></td>
+      <td>=</td>
+      <td>
+        <input type="number" id="row_2_answer" class="trial_no"/>
+      </td>
+      <td>
+        <h3 id="feedback_2"></h3>
+      </td>
+    </tr>
+    
+    <tr>
+      <td><h5><u>{{row_1_tens}}</u>{{row_1_units}} {{add_sub_mult}} {{row_2_tens}}<u>{{row_2_units}}</u>: </h5></td>
+      <td><h5>{{row_1_tens}}0 {{add_sub_mult}} {{row_2_units}}</h5></td>
+      <td>=</td>
+      <td>
+        <input type="number" id="row_3_answer" class="trial_no"/>
+      </td>
+      <td>
+        <h3 id="feedback_3"></h3>
+      </td>
+    </tr>
+    
+    <tr>
+      <td><h5><u>{{row_1_tens}}</u>{{row_1_units}} {{add_sub_mult}} <u>{{row_2_tens}}</u>{{row_2_units}}: </h5></td>
+      <td><h5>{{row_1_tens}}0 {{add_sub_mult}} {{row_2_tens}}0 </h5></td>
+      <td>=</td>
+      <td>
+        <input type="number" id="row_4_answer" class="trial_no"/>
+      </td>
+      <td>
+        <h3 id="feedback_4"></h3>
+      </td>
+    </tr>
+    <tr>
+      <td colspan = "3"></td>
+      <td><hr></rd>
+    </tr>
+    <tr>
+      <td colspan = "3"></td>
+      <td>
+        <input type="number" id="row_5_answer" class="trial_no"/>
+      </td>
+      <td>
+        <h3 id="feedback_5"></h3>
+      </td>
+    </tr>
+    <tr>
+      <td colspan = "3"></td>
+    </tr>
+    <tr>
+      <td colspan = "3"></td>
+      <td><hr></rd>
+    </tr>
+  </table>
+  <button class="btn btn-large btn-primary" id="check_answers_btn">Check Answers</button>
+  <button class="btn btn-large btn-primary" onclick="Trial.submit()" id="proceed_btn">Proceed</button>
+</div>
+<script>
+
+
+/*
+* Work out what is going on with your blocks etc.
+*/
+Trial.set_timer(function(){
+  var block_types    = Trial.get("feedback_blocks");
+  var block_type     = block_types[0];
+  var block_feedback = Trial.get(block_type + "_feedback");
+  
+  if(block_feedback.length == 0){
+    block_type = block_types[1];
+    block_feedback = Trial.get(block_type + "_feedback");
+  }
+  
+  var trial_feedback = block_feedback.pop();
+  
+  Trial.set(block_type + "_feedback", block_feedback);
+  
+  var answer_array = [
+    null,
+    "{{answer_1}}",
+    "{{answer_2}}",
+    "{{answer_3}}",
+    "{{answer_4}}",
+    "{{answer_5}}"
+  ];
+  
+  
+  $("#check_answers_btn").on("click",function(){
+    for(var i=1; i<5; i++){
+      console.dir(i);
+      console.dir($('#row_' + i + '_answer').val());
+      if($("#row_" + i + "_answer").val() == answer_array[i]){
+        $("#feedback_" + i).html("<span class='text-success'>Correct</span>");
+      } else {
+        $("#feedback_" + i).html("<span class='text-danger'>Incorrect</span>");
+      }
+    }
+    if($("#row_" + i + "_answer").val() == answer_array[i]){
+      $("#feedback_5").html("<span class='text-success'>" + trial_feedback.correct + "</span>");
+    } else {
+      $("#feedback_5").html("<span class='text-danger'>" + trial_feedback.incorrect + "</span>");
+    }
+    $("#proceed_btn").show();
+  });
+},100);
+</script>

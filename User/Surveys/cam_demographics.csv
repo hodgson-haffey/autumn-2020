@@ -1,0 +1,7 @@
+item_name,text,Type,Answers,Optional,Values,side_by_side,
+Gender,Gender,likert,Male|Female|Other|Prefer not to say,No,,yes
+Age,Age (years),Number,,No,,
+Education,Education,likert,"Special education|Some high school|High school graduate|Some college, no degree|Associates degree|Bachelors degree|Graduate degree (Masters, Doctorate, etc.)",No,,yes,
+ASD,Have you ever received a diagnosis of Autism spectrum conditions?,likert,Yes|No|Prefer not to say,No,,yes,
+Anxiety,Have you ever received a diagnosis of Anxiety related conditions?,likert,Yes|No|Prefer not to say,No,,yes,
+,,,,,,,

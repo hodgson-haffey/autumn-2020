@@ -1,0 +1,18 @@
+item_name,text,Type,Answers,Values,Optional,btn_width,side_text,
+Instructions1,"Answer each question with the number that best corresponds to how much you agree with each statement:<br>
+1=Not at All characteristic of me<br>
+3= Somewhat characteristic of me<br>
+5=Extremely characteristic of me",Instruct,,,,,,
+iuc_brief_1,Unforseen events upset me greatly,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_2,It frustrates me not having all the information I need,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_3,Uncertainty keeps me from living a full life,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_4,"A small unforeseen event can spoil everything, even with the best of planning",likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_5,"When it's time to act, uncertainty paralyses me",likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_6,When I am uncertain I can't function,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_7,I always want to know what the future has in store for me,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_8,I can't stand being taken by surprise,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_9,The smallest doubt can stop me from acting,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_10,I should be able to organize everything in advance,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_11,I must get away from all uncertain situations,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+iuc_brief_12,I tend to notice details that others do not.,likert,1|2|3|4|5,1|2|3|4|5,No,50px,Not at All characteristic of me|Extremely characteristic of me,
+,,,,,,,,

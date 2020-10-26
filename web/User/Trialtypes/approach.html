@@ -1,0 +1,77 @@
+<style>
+#show_image_btn{
+  display:none;
+  position: absolute;
+  top:500;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  width:150px;
+  height:50px;
+  display:none;
+}
+#trial_image{
+  display:none;
+  position: absolute;
+  top:0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin:auto;
+  width:400px;
+  height:400px;
+}
+</style>
+
+<img src="{{image}}" id="trial_image"/>
+<button class="btn btn-primary" id="show_image_btn">Show Image</button>
+<input type="hidden" id="approach_clicks" name="approach_clicks"/>
+<script>
+total_approach_clicks = 0;
+
+Trial.set_timer(function(){
+  $("#trial_image").show();
+  setTimeout(function(){
+    $("#trial_image").hide();
+    $("#show_image_btn").show();
+    setTimeout(function(){
+      Trial.submit();
+    },5200);
+  },800);
+},1000);
+
+$("#show_image_btn").on("click",function(){
+  $("#trial_image").show();
+  if(typeof(hide_timer) == "undefined"){
+    hide_timer = new Trial.timer(function(){
+      $("#trial_image").hide();
+      delete(hide_timer);
+    },{{hide_show_duration}});
+  } else {
+    hide_timer.add({{hide_show_duration}});
+  }
+});
+  
+
+/* in case I've misunderstood
+function bind_show_button(){
+  $("#show_image_btn").on("click",function(){
+    $("#trial_image").show();
+    setTimeout(function(){
+      $("#trial_image").hide();
+      $("#show_image_btn").unbind();
+      total_approach_clicks++;
+      $("#approach_clicks").val(total_approach_clicks)
+      setTimeout(function(){
+        bind_show_button();
+      },33);
+    },33);
+  });
+}
+bind_show_button();
+*/
+
+  
+  
+</script>

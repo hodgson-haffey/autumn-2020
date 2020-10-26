@@ -1,0 +1,17 @@
+item_name,text,Type,Answers,Values,Score: dep_soc_stigma,Optional,btn_width,
+Instructions1,"<span style='font-size:26px'><span style='color:#3f78d5'>These questions contain statements about depression. We would like you to tell us what
+you think most other people believe.
+Please indicate how strongly you agree
+or disagree with the following
+statements.</span></span>
+",Instruct,,,,,,
+DSSQ1,Most people believe that people with depression could snap out of it if they wanted.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ2,Most people believe that depression is a sign of personal weakness.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ3,Most people believe that depression is not a medical illness.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ4,Most people believe that people with depression are dangerous.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ5,Most people believe that it is best to avoid people with depression so that you don’t become depressed yourself.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ6,Most people believe that people with depression are unpredictable.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ7,"If they had depression, most people would not tell anyone.",likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ8,Most people would not employ someone they knew had been depressed.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+DSSQ9,Most people would not vote for a politician they knew had been depressed.,likert,Strongly disagree|Disagree|Neither agree or disagree|Agree| Strongly agree,0|1|2|3|4,1,No,100px,
+,,,,,,,,

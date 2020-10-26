@@ -1,0 +1,20 @@
+item_name,text,Type,Answers,Values,Optional,
+Instructions1,"<h1>Debrief form</h1>
+
+Thank you so much for participating in this study. This study aims to explore how worry may affect the day to day behaviour and choices we make. Literature suggests that the worry experienced by people with autism might be different from worry experienced by other people. It is proposed that social difficulties, sensory sensitivity, or uncertainty might be the significant cause of worry for people with autism but not those without autism. In this study, we are exploring if these factors can reliably predict worry in people with autism but not in people with worry without autism. We believe this study would help shaping differential interventions for people experiencing different kinds of worry. If you would like to know more about the project, please contact the lead investigator. <br><br>
+
+If you would like to withdraw your consent, please contact the lead investigator in next 3 days. After 3 days of the participation we will not be able to delete your data.<br><br>
+
+Contact for Further Information<br>
+Dr Indu Dubey<br>
+Lecturer in Psychology<br>
+Room 0.35, Hawthorn Building<br>
+Division of Psychology,<br>
+School of Applied Social Sciences,<br>
+De Montfort University,<br>
+Leicester, <br>
+UK<br>
+Phone: 0116 366 4401<br>
+Email: indu.dubey@dmu.ac.uk",Instruct,,,,
+Info_Accept,I understand these instructions and am happy to continue,likert,Agree,1,No,
+,,,,,,

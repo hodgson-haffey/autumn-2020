@@ -1,0 +1,8 @@
+item_name,text,Type,Answers,Values,Optional,btn_width,side_text,
+Instructions1,"Answer each question according to the way you personally feel, using the following scale:<br>
+1=Not at All<br>
+4=Moderately<br>
+7=Extremely",Instruct,,,,,,
+arith_confidence,How confident are you in your ability to do arithmetic?,likert,1|2|3|4|5|6|7|8|9|10|11,1|2|3|4|5|6|7|8|9|10|11,No,50px,Not at All|Extremely,
+arith_enjoyment,How much do you enjoy arithmetic?,likert,1|2|3|4|5|6|7|8|9|10|11,1|2|3|4|5|6|7|8|9|10|11,No,50px,Not at All|Extremely,
+,,,,,,,,

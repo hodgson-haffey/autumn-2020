@@ -1,0 +1,19 @@
+Item,Trial Type,Max Time,Text,Shuffle 1,survey,left_back,right_back,lock_img,lock_time,block_lock_img,left_color,right_color,left_type,right_type,
+0,survey,,,off,cam_info,,,,,,,,,,
+0,survey,,,off,cam_consent,,,,,,,,,,
+0,survey,,,off,cam_demographics,,,,,,,,,,
+0,instruct,,"<span style=""font-size:20px""><b>You will see two boxes with locks</span></b><br>
+<span style=""font-size:20px""><b>One box has videos of people while other has videos of household objects</span></b><br><br>
+<span style=""font-size:20px""><b>Open the locks to see a video</span></b><br>
+<span style=""font-size:20px""><b>You can choose freely which locks to open</span></b><br><br>
+<span style=""font-size:20px""><b>Click on the lock you want to unlock</span></b><br><br>
+<span style=""font-size:20px""><b>Wait until a lock has disappeared before you click on another lock</span></b><br><br>
+<span style=""font-size:20px""><b>You cannot change your mind about which video you want to choose once you've clicked on a lock</span></b><br>",off,,,,,,,,,,,
+2 to 31,cam_3,,,trial,,https://dl.dropbox.com/s/4xts1cfxy72xfdq/blue.jpg?dl=0,https://dl.dropbox.com/s/nqicz7h0pynhdg2/red.jpg?dl=0,https://dl.dropbox.com/s/3i2armyx6gnb5xj/lock1%20%28edited-Pixlr%29.jpg?dl=0,1000,https://dl.dropbox.com/s/pl2g9qf13okyu2m/lock1_crossed_out.jpg?dl=0,blue,red,social,nonsocial,
+32 to 61,cam_3,,,trial,,https://dl.dropbox.com/s/nqicz7h0pynhdg2/red.jpg?dl=0,https://dl.dropbox.com/s/4xts1cfxy72xfdq/blue.jpg?dl=0,https://dl.dropbox.com/s/3i2armyx6gnb5xj/lock1%20%28edited-Pixlr%29.jpg?dl=0,1000,https://dl.dropbox.com/s/pl2g9qf13okyu2m/lock1_crossed_out.jpg?dl=0,red,blue,nonsocial,social,
+0,survey,,,off,autism_quotient,,,,,,,,,,
+0,survey,,,off,sas_ant.csv,,,,,,,,,,
+0,instruct,,"<span style=""font-size:40px""><b>You've completed this part of the study! </span></b><br><br> 
+<span style=""font-size:25px""><b>You will receive a debrief of this study in an email.</span></b><br><br>
+<span style=""font-size:25px""><b>Please proceed and DO NOT CLOSE THE WINDOW until you are told that the data has been succesfully sent. </span></b>",off,,,,,,,,,,,
+,,,,,,,,,,,,,,,

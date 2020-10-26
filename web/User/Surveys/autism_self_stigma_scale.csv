@@ -1,0 +1,15 @@
+item_name,text,Type,Answers,Values,Score: aut_self_stigma,Optional,side_text,
+Instructions1,<span style='color:#006699'><span style='font-size:20px'>How much have you been shamed or stigmatised for the following behaviours?</span></span>,Instruct,,,,,,
+aut_ss_1,I often notice small sounds when others do not.,likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_2,I usually concentrate more on small details rather than the whole picture,likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_3,"I find it difficult to do more than one thing at
+once",likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_4,"If there is an interruption, I cannot switch back to what I was doing very quickly.",likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_5,"I find it difficult to ‘read between the lines’ when
+someone is talking to me",likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_6,I do not know how to tell if someone listening to me is getting bored.,likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_7,"When I'm reading a story, I can easily imagine what the characters might look like.",likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_8,"I like to collect information about categories of things (e.g. types of car, types of bird, types of train, types of plant, etc.).",likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_9,I find it difficult to work out what someone is thinking or feeling just by looking at their face.,likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+aut_ss_10,I find it difficult to work out people's intentions.,likert,1|2|3|4|5|6|7,1|2|3|4|5|6|7,1,No,Not at all stigmatised|extremely stigmatised,
+,,,,,,,,

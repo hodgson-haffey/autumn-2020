@@ -1,0 +1,108 @@
+<script>
+
+// based on https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
+}
+
+var growth_feedback = [{
+  "correct":   "Correct: Apply that effort to the next one too",
+  "incorrect": "Incorrect: You need to apply more effort to the next one"
+},{
+  "correct": "Correct: Your work paid off",
+  "incorrect": "Incorrect: If you work harder it'll pay off"
+},{
+  "correct": "Correct: You must have tried hard on that one",
+  "incorrect": "Incorrect: You must try harder next time"
+},{
+  "correct": "Correct: I can see you have put in effort to get that right",
+  "incorrect": "Incorrect: You didn't put in enough effort"
+},{
+  "correct": "Correct: If you keep this up you'll be able to do even harder ones",
+  "incorrect": "Incorrect: Keep trying and you'll get there" 
+},{
+  "correct": "Correct: The more you do the better you'll get",
+  "incorrect": "Incorrect: But you'll get better the more you do"
+},{
+  "correct": "Correct: Hard work is needed to do well on this",
+  "incorrect": "Incorrect: Hard work is needed to do well on this"
+},{
+  "correct": "Correct: You clearly worked hard",
+  "incorrect": "Incorrect: You needed to work harder"
+},{
+  "correct": "Correct: Practice makes perfect",
+  "incorrect": "Incorrect: But practice makes perfect"
+},{
+  "correct": "Correct: Keep up the good work",
+  "incorrect": "Incorrect: With a bit more work you'll get the next one"
+}];
+
+var fixed_feedback = [{
+  "correct": "Correct: You must be really smart",
+  "incorrect": "Incorrect: That was probably too difficult"
+},{
+  "correct": "Correct: You're really good at this",
+  "incorrect": "Incorrect: Hopefully the next one will be easier"
+},{
+  "correct": "Correct: You're a natural at this",
+  "incorrect": "Incorrect: This seems beyond your ability"
+},{
+  "correct": "Correct: You must be good at maths",
+  "incorrect": "Incorrect: It is hard for some people to grasp this"
+},{
+  "correct": "Correct: This must be your strength",
+  "incorrect": "Incorrect: Maths might not be one of your strengths"
+},{
+  "correct": "Correct: Well done, you made that look easy",
+  "incorrect": "Incorrect: That wasn't an easy one"
+},{
+  "correct": "Correct: You are clearly very gifted at this",
+  "incorrect": "Incorrect: You might be gifted at something else"
+},{
+  "correct": "Correct: Intelligent people find these easy",
+  "incorrect": "Incorrect: Intelligent people find these easy"
+},{
+  "correct": "Correct: You're an arithmetic genius",
+  "incorrect": "Incorrect: Arithmetic isn't for everyone"
+},{
+  "correct": "Correct: Some people are talented at this",
+  "incorrect": "Incorrect: Some people are talented at this"
+}];
+
+var feedback_blocks = ["fixed", "growth"];
+
+/*
+* Shuffle the above arrays
+*/
+
+shuffle(feedback_blocks);
+shuffle(fixed_feedback);
+shuffle(growth_feedback);
+Trial.set("feedback_blocks", feedback_blocks);
+Trial.set("fixed_feedback",  fixed_feedback);
+Trial.set("growth_feedback", growth_feedback);
+
+Trial.set_timer(function(){
+  Trial.submit();
+},100);
+
+
+
+
+
+</script>

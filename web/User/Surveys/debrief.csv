@@ -1,0 +1,33 @@
+item_name,text,Type,Answers,Optional,Values,,
+Information,"<b>Debrief Sheet</b><br>
+<br>
+<b>Project title: The effect of flavonoid consumption on cognition and mood in young people.</b>",instruct,,,,,
+info,"Thank you for taking part in this study, we are very grateful for your contribution. ",instruct,,,,,
+,"This study aims to explore whether flavonoid intake is related to mood and cognition. Flavonoids are naturally occurring compounds found in foods such as berry and citrus fruits, leafy green vegetables, dark chocolate, tea and red wine. Previous research has found that flavonoids may have a beneficial effect on cognition and mood in children and older adults, however little research has investigated these effects in healthy young adults. In the current study, participants were asked to answer questionnaires on habitual diet and mood and were also asked to complete a cognitive task.",instruct,,,,,
+,"Your data will be securely stored and kept confidential. It will be automatically anonymized and cannot be traced back to you. If you choose to withdraw (see details on how to do this below), your data will not be used but will be stored along with the data of the other participants.",instruct,,,,,
+,"If you have any concerns about the research, please contact the project supervisor, Dr. Katie Barfoot.",instruct,,,,,
+,"Email: katie.barfoot@reading.ac.uk ",instruct,,,,,
+,"If you choose to withdraw, if you would like further information about the study or if you would like to know about the findings once the study is complete, then please contact one of the researchers, Hannah-Rose Human, Lyana Halawi or Tatiana Tavares, via email.",instruct,,,,,
+,Email: h.human@student.reading.ac.uk,instruct,,,,,
+,Email: l.halawi@student.reading.ac.uk,instruct,,,,,
+,Email: t.fernandestavares@student.reading.ac.uk,instruct,,,,,
+contact,"If taking part in this study has raised any specific concerns about your mental health then we would suggest you <b>contact your general practitioner (GP).</b> 
+We have also provided some <b>helpful links and contacts below</b> should you wish to seek further support.<br>
+<br>
+
+
+<b>Samaritans</b>: the Samaritans provide a 24/7 hotline for people to confidentially talk about their feelings and problems.<br>
+
+Email: jo@Samaritans.org , Tel: 116 123<br>
+<br>
+
+
+<b>NHS mental health helplines:</b> https://www.nhs.uk/conditions/stress-anxiety-depression/mental-health-helplines/ <br>
+<br>
+
+
+<b>
+Student Welfare Team:</b> students at the University of Reading have the opportunity to contact the Student Welfare Team to support them with difficulties they might be facing.
+Website: http://student.reading.ac.uk/essentials/_support-and-wellbeing/support-arrangements/welfare.aspx 
+Email: studentwelfare@reading.ac.uk",instruct,,,,contact,
+,,,,,,,

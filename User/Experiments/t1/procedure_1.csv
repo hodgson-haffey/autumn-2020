@@ -1,0 +1,4 @@
+item,trial type,max time,text,Shuffle 1,survey,
+2,instruct,user,This is the start of a new experiment.,off,,
+0,survey,user,,off,t1_consent form.csv,
+,,,,,,

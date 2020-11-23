@@ -1,5 +1,6 @@
 item_name,text,Type,Answers,Optional,Values,side_by_side,btn_width,
-Info,<h1>Screening Questionnaire</h1>,instruct,,,,,,
+Info,"<h1>Screening Questionnaire</h1><br>
+<img src=""../User/Stimuli/images/OIP.jpg""/>",instruct,,,,,,
 Country,What is your country of residence?,Text,,No,,,,
 Age,Age,Number,,No,,,,
 Occupation,What is your professional occupation,Dropdown,Medical Student| Junior Doctor| Qualified Doctor| Retired Doctor| Other,No,,,,

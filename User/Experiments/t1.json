@@ -8,7 +8,7 @@
         "text",
         "Shuffle 1",
         "survey",
-        null
+        ""
       ],
       [
         "2",
@@ -16,26 +16,26 @@
         "user",
         "This is the start of a new experiment.",
         "off",
-        null,
-        null
+        "",
+        ""
       ],
       [
         "0",
         "survey",
         "user",
-        null,
+        "",
         "off",
         "t1_consent form.csv",
-        null
+        ""
       ],
       [
-        null,
-        null,
-        null,
-        null,
-        null,
-        null,
-        null
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -52,7 +52,7 @@
       "start_message",
       "buffer",
       "scripts",
-      null
+      ""
     ],
     [
       "condition_1",
@@ -66,21 +66,21 @@
       "",
       "5",
       "",
-      null
+      ""
     ],
     [
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null,
-      null
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
     ]
   ],
   "all_stims": {
@@ -88,22 +88,22 @@
       [
         "cue",
         "answer",
-        null
+        ""
       ],
       [
         "A",
         "Apple",
-        null
+        ""
       ],
       [
         "B",
         "Banana",
-        null
+        ""
       ],
       [
-        null,
-        null,
-        null
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -275,6 +275,151 @@
         "",
         "",
         ""
+      ]
+    ],
+    "t0_screening_questionnaire.csv": [
+      [
+        "item_name",
+        "text",
+        "Type",
+        "Answers",
+        "Optional",
+        "Values",
+        "side_by_side",
+        "btn_width",
+        null
+      ],
+      [
+        "Info",
+        "<h1>Screening Questionnaire</h1><br>\n<img src=\"../User/Stimuli/images/OIP.jpg\"/>",
+        "instruct",
+        null,
+        null,
+        null,
+        null,
+        "",
+        null
+      ],
+      [
+        "Country",
+        "What is your country of residence?",
+        "Text",
+        "",
+        "No",
+        "",
+        "",
+        "",
+        null
+      ],
+      [
+        "Age",
+        "Age",
+        "Number",
+        "",
+        "No",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Occupation",
+        "What is your professional occupation",
+        "Dropdown",
+        "Medical Student| Junior Doctor| Qualified Doctor| Retired Doctor| Other",
+        "No",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "NHS",
+        "Are you currently in employment within the NHS",
+        "likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Health",
+        "Do you have any diagnosed chronic or acute health conditions (either physical or psychiatric)?",
+        "Likert",
+        "Left|Right|Both",
+        "No",
+        "",
+        "yes",
+        "100px",
+        ""
+      ],
+      [
+        "Medications",
+        "Are you currently taking any medications?",
+        "Likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Consent_to_contact",
+        "Are you willing to be contacted via email by a researcher from the University to further discuss further participation?",
+        "likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Telephone_briefing",
+        "Would you like a telephone discussion with a researcher to discuss any questions or concerns (if yes, please provide both email and phone number below)?",
+        "likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Contact",
+        "If you answered yes to the above, please provide your email address (required) and telephone number (optional) and if you are eligible a researcher will be in touch soon.",
+        "Text",
+        null,
+        "No",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Submit",
+        "Please click 'Proceed' to submit your responses. Thank you",
+        "instruct",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
       ]
     ]
   },

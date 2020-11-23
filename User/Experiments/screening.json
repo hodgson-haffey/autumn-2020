@@ -1,0 +1,381 @@
+{
+  "all_procs": {
+    "procedure_1.csv": [
+      [
+        "item",
+        "trial type",
+        "max time",
+        "text",
+        "Shuffle 1",
+        "survey",
+        ""
+      ],
+      [
+        "2",
+        "instruct",
+        "user",
+        "This is the start of a new experiment.",
+        "off",
+        "",
+        ""
+      ],
+      [
+        "0",
+        "instruct",
+        "user",
+        "Information Sheet",
+        "off",
+        "information sheet.csv",
+        ""
+      ],
+      [
+        "0",
+        "instruct",
+        "user",
+        "Screening Questionnaire",
+        "off",
+        "t0_screening_questionnaire.csv",
+        ""
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  "cond_array": [
+    [
+      "name",
+      "notes",
+      "stimuli",
+      "procedure",
+      "fullscreen",
+      "welcome",
+      "participant_id",
+      "end_message",
+      "start_message",
+      "buffer",
+      "scripts",
+      ""
+    ],
+    [
+      "condition_1",
+      "You can put more detailed notes in this field",
+      "stimuli_1.csv",
+      "procedure_1.csv",
+      "off",
+      "",
+      "on",
+      "",
+      "",
+      "5",
+      "",
+      ""
+    ],
+    [
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      "",
+      ""
+    ]
+  ],
+  "all_stims": {
+    "stimuli_1.csv": [
+      [
+        "cue",
+        "answer",
+        ""
+      ],
+      [
+        "A",
+        "Apple",
+        ""
+      ],
+      [
+        "B",
+        "Banana",
+        ""
+      ],
+      [
+        "",
+        "",
+        ""
+      ]
+    ]
+  },
+  "public_key": "N3CUeguxqRH/J+OTmwRWYRLC1Q6HCFAOjIXaCHD46yE=",
+  "parsed_procs": {
+    "procedure_1.csv": [
+      {
+        "item": "2",
+        "trial type": "instruct",
+        "max time": "user",
+        "text": "This is the start of a new experiment.",
+        "survey": "",
+        "": "",
+        "shuffle 1": "off"
+      },
+      {
+        "item": "0",
+        "trial type": "instruct",
+        "max time": "user",
+        "text": "Information Sheet",
+        "survey": "information sheet.csv",
+        "": "",
+        "shuffle 1": "off"
+      },
+      {
+        "item": "0",
+        "trial type": "instruct",
+        "max time": "user",
+        "text": "Screening Questionnaire",
+        "survey": "t0_screening_questionnaire.csv",
+        "": "",
+        "shuffle 1": "off"
+      }
+    ]
+  },
+  "surveys": {
+    "information sheet.csv": [
+      [
+        "item_name",
+        "text",
+        "Type",
+        "Answers",
+        "Optional",
+        "Values",
+        null,
+        null
+      ],
+      [
+        "Information",
+        "<b>Title of Study: Investigating The Effect of Flavonoid Consumption on Cognition and Mood in Young People</b>",
+        "instruct",
+        "",
+        "",
+        "Information",
+        "<b>Title of Study: Investigating The Effect of Flavonoid Consumption on Cognition and Mood in Young People</b>",
+        null
+      ],
+      [
+        "info",
+        "We would be grateful to you if you could assist us by participating in our online study exploring whether a diet rich in flavonoids is associated with mood and cognitive task performance. Flavonoids are naturally-occurring compounds found in foods such as berry & citrus fruits, leafy green vegetables, tea, chocolate and red wine. Previous research has shown that consumption of flavonoid-rich foods may improve cognition and mood.<br>\n\n<br>\nThe study will be completed online via a weblink and will not require any changes in diet. Your participation will be done in one sitting from any location where you have access to the internet. <b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation.</b> The study will take approximately 30 minutes, during which time you will complete a cognitive task and a set of questionnaires asking general information about you and asking questions about your mood and diet. <br>\n<br>\n\n\nYour data will be kept confidential and securely stored, with only an anonymous number identifying it. All information will be destroyed after a period of 5 years from the completion of the project. Taking part in this study is completely voluntary; you may withdraw at any time without having to give any reason. Please feel free to ask any questions that you may have about this study at any point. \n<br><br>\nIf you score above threshold for risk of depression you will be notified via email. Upon completion of the study all participants will be provided with mood & depression support links.<br><br>\n\nThis application has been reviewed by the University Research Ethics Committee and has been given a favourable ethical opinion for conduct.\n\nIf you have any questions or concerns then please get in contact with the study supervisor Dr Katie Barfoot through this email katie.barfoot@reading.ac.uk \n\nThank you for your help.",
+        "instruct",
+        "",
+        "",
+        "info",
+        "We would be grateful to you if you could assist us by participating in our online study exploring whether a diet rich in flavonoids is associated with mood and cognitive task performance. Flavonoids are naturally-occurring compounds found in foods such as berry & citrus fruits, leafy green vegetables, tea, chocolate and red wine. Previous research has shown that consumption of flavonoid-rich foods may improve cognition and mood.<br>\n\n<br>\nThe study will be completed online via a weblink and will not require any changes in diet. Your participation will be done in one sitting from any location where you have access to the internet. It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation. The study will take approximately 30 minutes, during which time you will complete a cognitive task and a set of questionnaires asking general information about you and asking questions about your mood and diet. <br>\n<br>\n\n\nYour data will be kept confidential and securely stored, with only an anonymous number identifying it. All information will be destroyed after a period of 5 years from the completion of the project. Taking part in this study is completely voluntary; you may withdraw at any time without having to give any reason. Please feel free to ask any questions that you may have about this study at any point. \n<br><br>\nIf you score above threshold for risk of depression you will be notified via email. Upon completion of the study all participants will be provided with mood & depression support links.<br><br>\n\nThis application has been reviewed by the University Research Ethics Committee and has been given a favourable ethical opinion for conduct.\n\nIf you have any questions or concerns then please get in contact with the study supervisor Dr Katie Barfoot through this email katie.barfoot@reading.ac.uk \n\nThank you for your help.",
+        null
+      ],
+      [
+        "proceed",
+        "<b> Would you like to proceed?</b><span style='font-size:16'></span>",
+        "instruct",
+        "Proceed",
+        "no",
+        "proceed",
+        "<b> Would you like to proceed?</b><span style='font-size:16'></span>",
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ],
+    "t0_screening_questionnaire.csv": [
+      [
+        "item_name",
+        "text",
+        "Type",
+        "Answers",
+        "Optional",
+        "Values",
+        "side_by_side",
+        "btn_width",
+        null
+      ],
+      [
+        "Info",
+        "<h1>Screening Questionnaire</h1><br>\n<img src=\"../User/Stimuli/images/OIP.jpg\"/>",
+        "instruct",
+        null,
+        null,
+        null,
+        null,
+        "",
+        null
+      ],
+      [
+        "Country",
+        "What is your country of residence?",
+        "Text",
+        "",
+        "No",
+        "",
+        "",
+        "",
+        null
+      ],
+      [
+        "Age",
+        "Age",
+        "Number",
+        "",
+        "No",
+        "",
+        "",
+        "",
+        ""
+      ],
+      [
+        "Occupation",
+        "What is your professional occupation",
+        "Dropdown",
+        "Medical Student| Junior Doctor| Qualified Doctor| Retired Doctor| Other",
+        "No",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "NHS",
+        "Are you currently in employment within the NHS",
+        "likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Health",
+        "Do you have any diagnosed chronic or acute health conditions (either physical or psychiatric)?",
+        "Likert",
+        "Left|Right|Both",
+        "No",
+        "",
+        "yes",
+        "100px",
+        ""
+      ],
+      [
+        "Medications",
+        "Are you currently taking any medications?",
+        "Likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Consent_to_contact",
+        "Are you willing to be contacted via email by a researcher from the University to further discuss further participation?",
+        "likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Telephone_briefing",
+        "Would you like a telephone discussion with a researcher to discuss any questions or concerns (if yes, please provide both email and phone number below)?",
+        "likert",
+        "Yes|No",
+        "No",
+        null,
+        "yes",
+        "200px",
+        null
+      ],
+      [
+        "Contact",
+        "If you answered yes to the above, please provide your email address (required) and telephone number (optional) and if you are eligible a researcher will be in touch soon.",
+        "Text",
+        null,
+        "No",
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        "Submit",
+        "Please click 'Proceed' to submit your responses. Thank you",
+        "instruct",
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ],
+      [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null
+      ]
+    ]
+  },
+  "trialtypes": {
+    "instruct": "<!--\n/*  Collector (Garcia, Kornell, Kerr, Blake & Haffey)\n    A program for running experiments on the web\n    Copyright 2012-2016 Mikey Garcia & Nate Kornell\n\n\n    This program is free software: you can redistribute it and/or modify\n    it under the terms of the GNU General Public License version 3 as published by\n    the Free Software Foundation.\n\n    This program is distributed in the hope that it will be useful,\n    but WITHOUT ANY WARRANTY; without even the implied warranty of\n    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the\n    GNU General Public License for more details.\n\n    You should have received a copy of the GNU General Public License\n    along with this program.  If not, see <http://www.gnu.org/licenses/>\n \t\t\n\t\tKitten release (2019) author: Dr. Anthony Haffey (team@someopen.solutions)\t\t\n*/\n-->\n<style>\n#instruct_text{\n  margin:auto;\n  width:500px;\n  padding:50px;\n  max-height:600px;\n  text-align: center;  \n}\n#proceed_button{\n  position:absolute;\n  right: 20px;\n}\n#trial_contents{\n  position: absolute;\n  top:0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n  margin:auto;\n  width:600;\n  height:600;\n}\n</style>\n<div id=\"trial_contents\">\n  <div id=\"instruct_text\">{{text}}</div>\n  <div>\n    <button class=\"btn btn-primary\" id=\"proceed_button\" onclick=\"Trial.submit()\">Proceed</button>\n  </div>\n</div>"
+  },
+  "procs_csv": {
+    "procedure_1.csv": "item,trial type,max time,text,Shuffle 1,survey,\r\n2,instruct,user,This is the start of a new experiment.,off,,\r\n0,instruct,user,Information Sheet,off,information sheet.csv,\r\n0,instruct,user,Screening Questionnaire,off,t0_screening_questionnaire.csv,\r\n,,,,,,"
+  },
+  "stims_csv": {
+    "stimuli_1.csv": "cue,answer,\r\nA,Apple,\r\nB,Banana,\r\n,,"
+  },
+  "conditions_csv": "name,notes,stimuli,procedure,fullscreen,welcome,participant_id,end_message,start_message,buffer,scripts,\r\ncondition_1,You can put more detailed notes in this field,stimuli_1.csv,procedure_1.csv,off,,on,,,5,,\r\n,,,,,,,,,,,",
+  "conditions": [
+    {
+      "name": "condition_1",
+      "notes": "You can put more detailed notes in this field",
+      "stimuli": "stimuli_1.csv",
+      "procedure": "procedure_1.csv",
+      "fullscreen": "off",
+      "welcome": "",
+      "participant_id": "on",
+      "end_message": "",
+      "start_message": "",
+      "buffer": "5",
+      "scripts": "",
+      "": ""
+    }
+  ],
+  "mods": {},
+  "location": "hodgson-haffey/autumn-2020",
+  "storage_scripts": {
+    "ocollector.org": "https://ocollector.org/StoreData10_aodirnkcu73hsjd8.php"
+  }
+}

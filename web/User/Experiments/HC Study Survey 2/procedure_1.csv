@@ -1,3 +1,5 @@
-item,trial type,max time,text,Shuffle 1,
-2,instruct,user,This is the start of a new experiment.,off,
-,,,,,
+item,trial type,max time,text,Shuffle 1,survey,
+2,instruct,user,Welcome to HC Study Survey 2,off,,
+0,survey,user,DSI,off,dsi.csv,
+0,survey,user,M-SQ,off,m-sq.csv,
+,,,,,,

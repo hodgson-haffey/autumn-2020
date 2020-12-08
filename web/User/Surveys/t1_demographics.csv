@@ -1,6 +1,5 @@
 item_name,text,Type,Answers,Optional,Values,side_by_side,btn_width,
 Country,What is your country of residence?,Text,,No,,,,
-Handedness,What is your preferred hand?,Likert,Left|Right|Both,No,,yes,100px,
 ethnicity,If you would like to please state your ethnicity,Text,,Yes,,,,
 Sex,Sex,likert,Male|Female|Other,No,,yes,100px,
 Gender,Please self identify your gender:,Text,Male|Female|Other,No,,yes,100px,

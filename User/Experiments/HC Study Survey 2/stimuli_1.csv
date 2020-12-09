@@ -1,4 +1,30 @@
-cue,answer,
-A,Apple,
-B,Banana,
-,,
+0,instruct,user,"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>
+<br>
+<u><b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation</b><u></u>.<br></u>
+<br>
+ Firstly, we are going to have a practice of a task that you will complete 'for real' later on. This task is called the <b>Letters Task</b>. <br>
+<br>
+This task will require you to look at letters on the screen presented one at a time. <br>
+You will need to choose whether the current letter matches a letter presented some letters back.<br>
+<br>
+You are going to complete <u>3 practice rounds</u> of the Letters Task.<br><br>
+
+ To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the ""n"" and ""m"" keys.<br>
+<br>
+Are you ready for the instructions for Round 1 of your practice?",,*,"",
+0,instruct,user,"Practice Round 1:  You are about to be presented with a series of letters. If the letter presented matches the one 1 letter before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,off,"",
+2 to 26,nback,user,This is the start of practice Round 1.,off,off,"",
+0,instruct,user,"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,off,"",
+27 to 51,nback,user,This is the start of Practice Round 2.,off,off,"",
+0,instruct,user,"Practice Round 3: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,off,"",
+52 to 76,nback,user,This is the start of Practice Round 3.,off,off,"",
+0,instruct,user,This is the end of the Letters Task practice.,off,off,"",
+0,instruct,user,"Welcome to the Letters Task. This task will require you to look at letters on the screen presented one at a time. You will need to choose whether the current letter matches a letter presented some letters back. You are going to complete 3 rounds of the Letters Task. To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the ""n"" and ""m"" keys. Are you ready for the instructions for Round 1?",off,off,"",
+0,instruct,user,"Round 1:  You are about to be presented with a series of letters. If the letter presented matches the one 1 letter before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block1,"",
+2 to 26,nback,user,This is the start of Round 1.,off,block1,"",
+0,instruct,user,"Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block2,"",
+27 to 51,nback,user,This is the start of Round 2.,off,block2,"",
+0,instruct,user,"Round 3: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block3,"",
+52 to 76,nback,user,This is the start of Round 3.,off,block3,"",
+0,instruct,user,This is the end of the Letters Task.,off,off,"",
+,,,,,,,

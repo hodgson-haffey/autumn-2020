@@ -1,5 +1,5 @@
 item,trial type,max time,text,Shuffle 1,Shuffle 2,survey,
-2,instruct,user,Welcome to HC Study Survey 2,off,,,
+2,instruct,user,<b>Welcome to <span style='font-size:30'></span>Study Survey 2</b>,off,,,
 0,survey,user,DSI,off,,dsi.csv,
 0,survey,user,M-SQ,off,,m-sq.csv,
 0,instruct,user,"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>
@@ -15,12 +15,10 @@ You are going to complete <u>3 practice rounds</u> of the Letters Task.<br><br>
 
  To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the ""n"" and ""m"" keys.<br>
 <br>
-Are you ready for the instructions for Round 1 of your practice?",,,,
-0,instruct,user,"Practice Round 1:  You are about to be presented with a series of letters. If the letter presented matches the one 1 letter before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
-2 to 26,nback,user,This is the start of practice Round 1.,off,,,
-0,instruct,user,"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
+Are you ready for the instructions for Round 1 of your practice?",off,,,
+0,instruct,user,"Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
 27 to 51,nback,user,This is the start of Practice Round 2.,off,,,
-0,instruct,user,"Practice Round 3: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
+0,instruct,user,"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
 52 to 76,nback,user,This is the start of Practice Round 3.,off,,,
 0,instruct,user,This is the end of the Letters Task practice.,off,,,
 0,instruct,user,"Round 1:  You are about to be presented with a series of letters. If the letter presented matches the one 1 letter before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block1,,
@@ -30,4 +28,5 @@ Are you ready for the instructions for Round 1 of your practice?",,,,
 0,instruct,user,"Round 3: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block3,,
 52 to 76,nback,user,This is the start of Round 3.,off,block3,,
 0,instruct,user,This is the end of the Letters Task.,off,off,,
+0,instruct,user,Thank you for completing Study Survey 2. Just one more to go!,off,,,
 ,,,,,,,

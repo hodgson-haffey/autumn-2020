@@ -1,0 +1,19 @@
+item_name,text,Type,
+Instructions1,"<h1>Debriefing Information </h1>
+",Instruct,
+Info1,"
+Thank you for participating in this study exploring the association between hydration and competence in doctors. As described in the information form, this study is being undertaken by researchers from the School of Psychology and Clinical Language Science at the University of Reading. This study has been reviewed by the School of Psychology Research Ethics Committee (project reference: __________, end date: 01/01/2022). On completion of this study, results may be submitted for peer-reviewed journal publication, if you later decide that that you wish to withdraw your results – please contact the researcher within one month following your completion of the study with your participant identifier number. ",Instruct,
+Info2,"We hope this has been an interesting opportunity to reflect on, and share your experiences. If you have any questions about this process, or would like to discuss your experience in a telephone debriefing, please contact researcher Kirsty Hodgson by emailing k.l.hodgson@pgr.reading.ac.uk Alternatively, supervisors’ Dr Allán Laville (a.laville@reading.ac.uk) and Dr Daniel Lamport (daniel.lamport@reading.ac.uk) at the School of Psychology and Clinical Language Sciences may be contacted if you have any concerns about this study.  If following this process, you wish to raise a complaint, please contact the School of Psychology Research Ethics Committee at the University of Reading pclsethics@reading.ac.uk.",Instruct,
+Info3,"If anything during the course of this study has raised personal concerns about your physical and/or emotional wellbeing, further support can be found from the following services:",Instruct,
+,"•	Your General Practitioner<br>
+
+•	The Samaritans www.samaritans.org/<br>
+
+•	Doctors’ Support Network (DSN) www.dsn.org.uk/<br>
+
+•	NHS Direct www.england.nhs.uk/<br>
+
+•	British Medical Association (BMA) Support Services www.bma.org.uk/advice/work-life-support/your-wellbeing<br>
+
+•	MIND www.mind.org.uk/information-support/helplines/",Instruct,
+,,,

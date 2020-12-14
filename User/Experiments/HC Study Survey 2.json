@@ -866,12 +866,16 @@
         "Type",
         "Answers",
         "Optional",
+        "Btn_width",
+        "Values",
         null
       ],
       [
         "Title",
         "<b>Self-Assessment Questionnaire (M-SQ)</b>",
         "instruct",
+        null,
+        null,
         null,
         null,
         null
@@ -882,6 +886,8 @@
         "instruct",
         null,
         null,
+        null,
+        null,
         null
       ],
       [
@@ -890,14 +896,18 @@
         "instruct",
         "",
         "",
+        null,
+        null,
         null
       ],
       [
         "SQP1a",
         "a. Clinical knowledge",
-        "likert",
+        "radio",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
+        null,
+        "1|2|3|4|5|6|7",
         null
       ],
       [
@@ -906,6 +916,8 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -914,6 +926,8 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -922,7 +936,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1e",
@@ -930,7 +946,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1f",
@@ -938,7 +956,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1g",
@@ -946,7 +966,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1h",
@@ -954,7 +976,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1i",
@@ -962,7 +986,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1j",
@@ -970,7 +996,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1k",
@@ -978,7 +1006,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1l",
@@ -986,7 +1016,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1m",
@@ -994,7 +1026,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1n",
@@ -1002,7 +1036,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP1o",
@@ -1010,7 +1046,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP2",
@@ -1018,6 +1056,8 @@
         "likert",
         "Yes Frequently|Yes, Infrequently|No",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -1026,7 +1066,9 @@
         "instruct",
         "",
         "",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3",
@@ -1034,6 +1076,8 @@
         "instruct",
         "",
         "",
+        null,
+        null,
         null
       ],
       [
@@ -1042,7 +1086,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3b",
@@ -1050,7 +1096,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3c",
@@ -1058,7 +1106,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3d",
@@ -1066,7 +1116,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3e",
@@ -1074,7 +1126,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3f",
@@ -1082,7 +1136,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP3g",
@@ -1090,7 +1146,9 @@
         "likert",
         "Poor|Less than Satisfactory|Satisfactory|Good|Very Good|Don’t Know|Not Undertaken Today",
         "Yes",
-        ""
+        "",
+        null,
+        null
       ],
       [
         "SQP4",
@@ -1098,6 +1156,8 @@
         "instruct",
         "",
         "",
+        null,
+        null,
         null
       ],
       [
@@ -1106,6 +1166,8 @@
         "likert",
         "Strongly Disagree|Disagree|Neutral|Agree|Strongly Agree|Does not Apply",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -1114,6 +1176,8 @@
         "likert",
         "Strongly Disagree|Disagree|Neutral|Agree|Strongly Agree|Does not Apply",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -1122,6 +1186,8 @@
         "likert",
         "Strongly Disagree|Disagree|Neutral|Agree|Strongly Agree|Does not Apply",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -1130,6 +1196,8 @@
         "likert",
         "Yes|No|I do not know",
         "Yes",
+        "100px",
+        null,
         null
       ],
       [
@@ -1138,6 +1206,8 @@
         "text",
         "",
         "Yes",
+        null,
+        null,
         null
       ],
       [
@@ -1146,9 +1216,13 @@
         "instruct",
         "",
         "",
+        null,
+        null,
         null
       ],
       [
+        null,
+        null,
         null,
         null,
         null,
@@ -1164,12 +1238,14 @@
         "Type",
         "Answers",
         "Optional",
+        "Values",
         null
       ],
       [
         "Title",
         "<b>Daily Stress Inventory</b>",
         "instruct",
+        null,
         null,
         null,
         null
@@ -1180,14 +1256,16 @@
         "instruct",
         null,
         null,
+        null,
         null
       ],
       [
         "DSI1",
         "1. Performed poorly at a task",
-        "likert",
+        "radio",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        "1|2|3|4|5|6|7|8",
         null
       ],
       [
@@ -1196,6 +1274,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1204,6 +1283,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1212,6 +1292,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1220,7 +1301,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI6",
@@ -1228,7 +1310,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI7",
@@ -1236,7 +1319,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI8",
@@ -1244,7 +1328,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI9",
@@ -1252,7 +1337,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI10",
@@ -1260,7 +1346,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI11",
@@ -1268,7 +1355,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI12",
@@ -1276,7 +1364,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI13",
@@ -1284,7 +1373,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI14",
@@ -1292,7 +1382,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI15",
@@ -1300,7 +1391,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI16",
@@ -1308,7 +1400,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI17",
@@ -1316,6 +1409,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1324,7 +1418,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI19",
@@ -1332,6 +1427,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1340,7 +1436,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI21",
@@ -1348,7 +1445,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI22",
@@ -1356,7 +1454,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI23",
@@ -1364,7 +1463,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI24",
@@ -1372,7 +1472,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI25",
@@ -1380,7 +1481,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI26",
@@ -1388,7 +1490,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI27",
@@ -1396,6 +1499,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1404,7 +1508,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI29",
@@ -1412,7 +1517,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI30",
@@ -1420,7 +1526,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI31",
@@ -1428,7 +1535,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI32",
@@ -1436,7 +1544,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI33",
@@ -1444,6 +1553,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1452,7 +1562,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI35",
@@ -1460,7 +1571,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI36",
@@ -1468,7 +1580,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI37",
@@ -1476,6 +1589,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1484,6 +1598,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1492,6 +1607,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1500,6 +1616,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1508,6 +1625,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1516,6 +1634,7 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
+        null,
         null
       ],
       [
@@ -1524,7 +1643,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI44",
@@ -1532,7 +1652,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI45",
@@ -1540,7 +1661,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI46",
@@ -1548,7 +1670,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI47",
@@ -1556,7 +1679,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI48",
@@ -1564,7 +1688,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI49",
@@ -1572,7 +1697,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI50",
@@ -1580,7 +1706,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI51",
@@ -1588,7 +1715,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI52",
@@ -1596,7 +1724,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI53",
@@ -1604,7 +1733,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI54",
@@ -1612,7 +1742,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI55",
@@ -1620,7 +1751,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI56",
@@ -1628,7 +1760,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI57",
@@ -1636,7 +1769,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI58",
@@ -1644,7 +1778,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI_add_instruct",
@@ -1652,7 +1787,8 @@
         "instruct",
         "",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI59",
@@ -1660,7 +1796,8 @@
         "text",
         "",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI59b",
@@ -1668,7 +1805,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI60",
@@ -1676,7 +1814,8 @@
         "text",
         "",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "DSI60b",
@@ -1684,7 +1823,8 @@
         "likert",
         "Did not occur|Occurred but was not stressful|Caused very little stress|Caused a little stress|Caused some stress|Caused much stress|Caused very much stress|Caused me to panic",
         "Yes",
-        ""
+        "",
+        null
       ],
       [
         "SQP",
@@ -1692,9 +1832,11 @@
         "instruct",
         "",
         "",
-        ""
+        "",
+        null
       ],
       [
+        null,
         null,
         null,
         null,
@@ -2031,5 +2173,9 @@
       "": ""
     }
   ],
-  "mods": {}
+  "mods": {},
+  "location": "hodgson-haffey/autumn-2020",
+  "storage_scripts": {
+    "ocollector.org": "https://ocollector.org/StoreData10_aodirnkcu73hsjd8.php"
+  }
 }

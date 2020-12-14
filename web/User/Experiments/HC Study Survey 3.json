@@ -167,9 +167,9 @@
         "user",
         "Debriefing",
         "off",
-        null,
+        "",
         "hc debriefing.csv",
-        null
+        ""
       ],
       [
         "0",
@@ -693,13 +693,13 @@
         "W",
         "n",
         "no",
-        null
+        ""
       ],
       [
-        null,
-        null,
-        null,
-        null
+        "",
+        "",
+        "",
+        ""
       ]
     ]
   },
@@ -2057,6 +2057,12 @@
         null,
         "•\tYour General Practitioner<br>\r\n\r\n•\tThe Samaritans www.samaritans.org/<br>\r\n\r\n•\tDoctors’ Support Network (DSN) www.dsn.org.uk/<br>\r\n\r\n•\tNHS Direct www.england.nhs.uk/<br>\r\n\r\n•\tBritish Medical Association (BMA) Support Services www.bma.org.uk/advice/work-life-support/your-wellbeing<br>\r\n\r\n•\tMIND www.mind.org.uk/information-support/helplines/",
         "Instruct",
+        null
+      ],
+      [
+        "survey",
+        "If there are any further comments or reflections that you would like to share with the research team please do so here:",
+        "text",
         null
       ],
       [

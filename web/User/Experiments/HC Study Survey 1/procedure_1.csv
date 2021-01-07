@@ -1,6 +1,5 @@
-item,trial type,max time,text,Shuffle 1,survey,
+item,trial type,max time,text,shuffle 1,survey,
 2,instruct,user,Welcome to HC Study Survey 1,off,,
 0,survey,user,Info,off,t1_information_sheet.csv,
 0,survey,user,consent,off,t1_consent form.csv,
 0,survey,user,Demographics,off,hc demographic survey.csv,
-,,,,,,

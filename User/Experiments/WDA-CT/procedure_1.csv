@@ -1,5 +1,4 @@
 item,trial type,max time,text,shuffle 1,shuffle 2,survey,
-2,instruct,user,<b>Welcome to <span style='font-size:30'></span>Study Survey 2b</b>,off,,,
 0,instruct,user,"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>
 <br>
 <u><b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation</b><u></u>.<br></u>
@@ -23,5 +22,4 @@ Are you ready for the instructions for Round 1 of your practice?",off,,,
 27 to 51,nback,user,This is the start of Round 1.,off,block2,,
 0,instruct,user,"Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block3,,
 52 to 76,nback,user,This is the start of Round 2.,off,block3,,
-0,instruct,user,This is the end of the Letters Task.,off,off,,
 0,instruct,user,Thank you for completing the Letters Task. Please continue to the final page and click proceed for your responses to be registered.,off,,,

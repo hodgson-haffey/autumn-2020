@@ -4986,7 +4986,188 @@
       },
       "HC Study Survey 2": {
         "all_procs": {
-          "procedure_1.csv": "item,trial type,max time,text,shuffle 1,shuffle 2,survey,\r\n2,instruct,user,<b>Welcome to <span style='font-size:30'></span>Study Survey 2</b>,off,,,\r\n0,survey,user,Hydration Status,off,,hydration status.csv,\r\n0,survey,user,DSI,off,,dsi.csv,\r\n0,survey,user,M-SQ,off,,m-sq.csv,\r\n0,instruct,user,\"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>\r\n<br>\r\n<u><b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation</b><u></u>.<br></u>\r\n<br>\r\n Firstly, we are going to have a practice of a task that you will complete 'for real' later on. This task is called the <b>Letters Task</b>. <br>\r\n<br>\r\nThis task will require you to look at letters on the screen presented one at a time. <br>\r\nYou will need to choose whether the current letter matches a letter presented some letters back.<br>\r\n<br>\r\nYou are going to complete <u>2 practice rounds</u> of the Letters Task.<br><br>\r\n\r\n To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the \"\"n\"\" and \"\"m\"\" keys.<br>\r\n<br>\r\nAre you ready for the instructions for Round 1 of your practice?\",off,,,\r\n0,instruct,user,\"Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,,,\r\n27 to 51,nback,user,This is the start of Practice Round 2.,off,,,\r\n0,instruct,user,\"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,,,\r\n52 to 76,nback,user,This is the start of Practice Round 3.,off,,,\r\n0,instruct,user,This is the end of the Letters Task practice.,off,,,\r\n0,instruct,user,\"Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,block2,,\r\n27 to 51,nback,user,This is the start of Round 1.,off,block2,,\r\n0,instruct,user,\"Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,block3,,\r\n52 to 76,nback,user,This is the start of Round 2.,off,block3,,\r\n0,instruct,user,This is the end of the Letters Task.,off,off,,\r\n0,instruct,user,Thank you for completing Study Survey 2. Please continue to the final page and click proceed for your responses to be registered.,off,,,"
+          "procedure_1.csv": [
+            [
+              "item",
+              "trial type",
+              "max time",
+              "text",
+              "shuffle 1",
+              "shuffle 2",
+              "survey",
+              ""
+            ],
+            [
+              "2",
+              "instruct",
+              "user",
+              "<b>Welcome to <span style='font-size:30'></span>Study Survey 2</b>",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "survey",
+              "user",
+              "Hydration Status",
+              "off",
+              "",
+              "hydration status.csv",
+              ""
+            ],
+            [
+              "0",
+              "survey",
+              "user",
+              "DSI",
+              "off",
+              "",
+              "dsi.csv",
+              ""
+            ],
+            [
+              "0",
+              "survey",
+              "user",
+              "M-SQ",
+              "off",
+              "",
+              "m-sq.csv",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>\n<br>\n<u><b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation</b><u></u>.<br></u>\n<br>\n Firstly, we are going to have a practice of a task that you will complete 'for real' later on. This task is called the <b>Letters Task</b>. <br>\n<br>\nThis task will require you to look at letters on the screen presented one at a time. <br>\nYou will need to choose whether the current letter matches a letter presented some letters back.<br>\n<br>\nYou are going to complete <u>2 practice rounds</u> of the Letters Task.<br><br>\n\n To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the \"n\" and \"m\" keys.<br>\n<br>\nAre you ready for the instructions for Round 1 of your practice?",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"m\" for \"match\". If not, press \"n\" for \"no match\". The first three trials will be \"no match\", so just press \"n\".",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "27 to 51",
+              "nback",
+              "user",
+              "This is the start of Practice Round 2.",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"m\" for \"match\". If not, press \"n\" for \"no match\". The first three trials will be \"no match\", so just press \"n\".",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "52 to 76",
+              "nback",
+              "user",
+              "This is the start of Practice Round 3.",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "This is the end of the Letters Task practice.",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"m\" for \"match\". If not, press \"n\" for \"no match\". The first three trials will be \"no match\", so just press \"n\".",
+              "off",
+              "block2",
+              "",
+              ""
+            ],
+            [
+              "27 to 51",
+              "nback",
+              "user",
+              "This is the start of Round 1.",
+              "off",
+              "block2",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"m\" for \"match\". If not, press \"n\" for \"no match\". The first three trials will be \"no match\", so just press \"n\".",
+              "off",
+              "block3",
+              "",
+              ""
+            ],
+            [
+              "52 to 76",
+              "nback",
+              "user",
+              "This is the start of Round 2.",
+              "off",
+              "block3",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "This is the end of the Letters Task.",
+              "off",
+              "off",
+              "",
+              ""
+            ],
+            [
+              "0",
+              "instruct",
+              "user",
+              "Thank you for completing Study Survey 2. Please continue to the final page and click proceed for your responses to be registered.",
+              "off",
+              "",
+              "",
+              ""
+            ],
+            [
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null,
+              null
+            ]
+          ]
         },
         "all_stims": {
           "stimuli_1.csv": "Cue,Answer,Match,\r\nS,n,no,\r\nW,n,no,\r\nQ,n,no,\r\nQ,m,yes,\r\nF,n,no,\r\nF,m,yes,\r\nQ,n,no,\r\nK,n,no,\r\nK,m,yes,\r\nB,n,no,\r\nY,n,no,\r\nY,m,yes,\r\nZ,n,no,\r\nZ,m,yes,\r\nL,n,no,\r\nZ,n,no,\r\nS,n,no,\r\nS,m,yes,\r\nY,n,no,\r\nJ,n,no,\r\nJ,m,yes,\r\nT,n,no,\r\nH,n,no,\r\nP,n,no,\r\nZ,n,no,\r\nP,n,no,\r\nG,n,no,\r\nC,n,no,\r\nG,m,yes,\r\nB,n,no,\r\nJ,n,no,\r\nR,n,no,\r\nJ,m,yes,\r\nR,m,yes,\r\nN,n,no,\r\nF,n,no,\r\nJ,n,no,\r\nH,n,no,\r\nJ,m,yes,\r\nV,n,no,\r\nZ,n,no,\r\nV,m,yes,\r\nV,n,no,\r\nK,n,no,\r\nQ,n,no,\r\nK,m,yes,\r\nW,n,no,\r\nK,m,yes,\r\nP,n,no,\r\nS,n,no,\r\nL,n,no,\r\nC,n,no,\r\nS,n,no,\r\nQ,n,no,\r\nC,m,yes,\r\nM,n,no,\r\nV,n,no,\r\nT,n,no,\r\nM,m,yes,\r\nB,n,no,\r\nT,m,yes,\r\nV,n,no,\r\nM,n,no,\r\nV,n,no,\r\nB,n,no,\r\nM,m,yes,\r\nV,m,yes,\r\nX,n,no,\r\nZ,n,no,\r\nY,n,no,\r\nX,m,yes,\r\nH,n,no,\r\nY,m,yes,\r\nS,n,no,\r\nW,n,no,\r\n,,,"
@@ -7654,7 +7835,7 @@
       },
       "WDA-CT": {
         "all_procs": {
-          "procedure_1.csv": "item,trial type,max time,text,shuffle 1,shuffle 2,survey,\r\n0,instruct,user,\"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>\r\n<br>\r\n<u><b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation</b><u></u>.<br></u>\r\n<br>\r\n Firstly, we are going to have a practice of a task that you will complete 'for real' later on. This task is called the <b>Letters Task</b>. <br>\r\n<br>\r\nThis task will require you to look at letters on the screen presented one at a time. <br>\r\nYou will need to choose whether the current letter matches a letter presented some letters back.<br>\r\n<br>\r\nYou are going to complete <u>2 practice rounds</u> of the Letters Task.<br><br>\r\n\r\n To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the \"\"n\"\" and \"\"m\"\" keys.<br>\r\n<br>\r\nAre you ready for the instructions for Round 1 of your practice?\",off,,,\r\n0,instruct,user,\"Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,,,\r\n27 to 51,nback,user,This is the start of Practice Round 2.,off,,,\r\n0,instruct,user,\"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,,,\r\n52 to 76,nback,user,This is the start of Practice Round 3.,off,,,\r\n0,instruct,user,This is the end of the Letters Task practice.,off,,,\r\n0,instruct,user,\"Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,block2,,\r\n27 to 51,nback,user,This is the start of Round 1.,off,block2,,\r\n0,instruct,user,\"Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,block3,,\r\n52 to 76,nback,user,This is the start of Round 2.,off,block3,,\r\n0,instruct,user,Thank you for completing the Letters Task. Please continue to the final page and click proceed for your responses to be registered.,off,,,"
+          "procedure_1.csv": "item,trial type,max time,text,shuffle 1,shuffle 2,survey,\r\n0,instruct,user,\"<span style='font-size:16'><b>Practice of the Letters Task<br></b></span></span></span>\r\n<br>\r\n<u><b>It is advised that you complete the study on a laptop, desktop or tablet device for best screen presentation</b><u></u>.<br></u>\r\n<br>\r\n Firstly, we are going to have a practice of a task that you will complete 'for real' later on. This task is called the <b>Letters Task</b>. <br>\r\n<br>\r\nThis task will require you to look at letters on the screen presented one at a time. <br>\r\nYou will need to choose whether the current letter matches a letter presented some letters back.<br>\r\n<br>\r\nYou are going to complete <u>2 practice rounds</u> of the Letters Task.<br><br>\r\n\r\n To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the \"\"n\"\" and \"\"m\"\" keys.<br>\r\n<br>\r\nAre you ready for the instructions for Round 1 of your practice?\",off,off,,\r\n0,instruct,user,\"Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,off,,\r\n27 to 51,nback,user,This is the start of Practice Round 2.,off,off,,\r\n0,instruct,user,\"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,off,,\r\n52 to 76,nback,user,This is the start of Practice Round 3.,off,off,,\r\n0,instruct,user,This is the end of the Letters Task practice.,off,off,,\r\n0,instruct,user,\"Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,block2,,\r\n27 to 51,nback,user,This is the start of Round 1.,off,block2,,\r\n0,instruct,user,\"Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press \"\"m\"\" for \"\"match\"\". If not, press \"\"n\"\" for \"\"no match\"\". The first three trials will be \"\"no match\"\", so just press \"\"n\"\".\",off,block3,,\r\n52 to 76,nback,user,This is the start of Round 2.,off,block3,,\r\n0,instruct,user,\"Thank you for completing the Letters Task. Please continue to the final page and click proceed for your responses to be registered. Please don't forget to complete Study Survey 2 if you haven't already done so:<br><br>\r\n\r\nhttps://reading.onlinesurveys.ac.uk/p2s1-study-survey-2\",off,,,"
         },
         "conditions": "name,notes,stimuli,procedure,fullscreen,welcome,participant_id,end_message,start_message,buffer,scripts,\r\ncondition_1,You can put more detailed notes in this field,stimuli_1.csv,procedure_1.csv,off,,on,,,5,,",
         "all_stims": {

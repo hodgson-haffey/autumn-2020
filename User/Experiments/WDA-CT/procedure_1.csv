@@ -12,14 +12,16 @@ You are going to complete <u>2 practice rounds</u> of the Letters Task.<br><br>
 
  To prepare, please place your dominant hand on the keyboard with your index and middle fingers resting on the ""n"" and ""m"" keys.<br>
 <br>
-Are you ready for the instructions for Round 1 of your practice?",off,,,
-0,instruct,user,"Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
-27 to 51,nback,user,This is the start of Practice Round 2.,off,,,
-0,instruct,user,"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,,,
-52 to 76,nback,user,This is the start of Practice Round 3.,off,,,
-0,instruct,user,This is the end of the Letters Task practice.,off,,,
+Are you ready for the instructions for Round 1 of your practice?",off,off,,
+0,instruct,user,"Practice Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,off,,
+27 to 51,nback,user,This is the start of Practice Round 2.,off,off,,
+0,instruct,user,"Practice Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,off,,
+52 to 76,nback,user,This is the start of Practice Round 3.,off,off,,
+0,instruct,user,This is the end of the Letters Task practice.,off,off,,
 0,instruct,user,"Round 1: You are about to be presented with a series of letters. If the letter presented matches the one 2 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block2,,
 27 to 51,nback,user,This is the start of Round 1.,off,block2,,
 0,instruct,user,"Round 2: You are about to be presented with a series of letters. If the letter presented matches the one 3 letters before, then press ""m"" for ""match"". If not, press ""n"" for ""no match"". The first three trials will be ""no match"", so just press ""n"".",off,block3,,
 52 to 76,nback,user,This is the start of Round 2.,off,block3,,
-0,instruct,user,Thank you for completing the Letters Task. Please continue to the final page and click proceed for your responses to be registered.,off,,,
+0,instruct,user,"Thank you for completing the Letters Task. Please continue to the final page and click proceed for your responses to be registered. Please don't forget to complete Study Survey 2 if you haven't already done so:<br><br>
+
+https://reading.onlinesurveys.ac.uk/p2s1-study-survey-2",off,,,

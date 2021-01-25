@@ -1,8 +1,16 @@
 {
+  "age_check":{
+    "subtitle": "Whether you want to restrict your study to participants aged 18 and above",
+    "text": "By default the experiment will tell participants to not participate if they are under 18. You can turn this off with the value “no”."
+  },
   "description":{
 		"subtitle":"deprecated",
 		"text":"please change this column header to <b>name</b>."
 	},
+  "mobile":{
+    "subtitle":"Whether the user is allowed to use a mobile device",
+    "text":"By default the user is allowed to use mobile devices - but you can add this column and write <b>no</b> and this will prevent them completing the study on one."
+  },
 	"name":{
 		"subtitle":"Name of Condition",
 		"text":"Please don't put any spaces in this name. You can use underscores _ instead though."
@@ -25,7 +33,7 @@
   },
 	"participant_id":{
     "subtitle":"Participants give their ID",
-    "text":"By default, participants will give a <b>participant id</b> (e.g. a Prolific Academic or MTurk ID) at the start of the experiment. Change this setting to either <b>random</b> (recommended) to generate a unique and randomised id for the user, or <b>off</b> (not recommended) for the participant to have the id 'notUnique'. The participant_id influences the name of their data file. If the participant does not put in an ID, they will skip the <b>start_message</b>."
+    "text":"By default this will be set to <b>on</b> and participants will give a <b>participant id</b> (e.g. a Prolific Academic or MTurk ID) at the start of the experiment. Change this setting to either <b>random</b> (recommended) to generate a unique and randomised id for the user, or <b>off</b> (not recommended) for the participant to have the id 'notUnique'. The participant_id influences the name of their data file. If the participant does not put in an ID, they will skip the <b>start_message</b>."
   },
 	"end_message":{
     "subtitle":"A message at the very end",

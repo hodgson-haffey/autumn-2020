@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-    Kitten release (2019) author: Dr. Anthony Haffey (team@someopen.solutions)
+    Kitten/Cat release (2019-2021) author: Dr. Anthony Haffey (team@someopen.solutions)
 */
 function initiate_actions(){
   function protected_name_check(this_name){
@@ -176,7 +176,7 @@ function initiate_actions(){
               });
 
             case "localhost":
-              var response = Collector.electron.write_file(
+              var response = Collector.electron.fs.write_file(
                 "Trialtypes",
                 new_name.replace(".html","") + ".html",
                 master_json
@@ -184,7 +184,7 @@ function initiate_actions(){
                   .user_trialtypes
                   [new_name])
               if(write_response == "success"){
-                Collector.electron.delete_trialtype(
+                Collector.electron.fs.delete_trialtype(
                     original_name,
                     function(response){
                       if(response == "success"){

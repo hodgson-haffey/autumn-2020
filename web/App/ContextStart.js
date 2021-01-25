@@ -29,6 +29,7 @@ Collector.start = function(){
   wait_till_exists("list_data_servers");
   wait_till_exists("list_servers");
   wait_till_exists("list_surveys");
+  wait_till_exists("list_pathways");
 }
 
 switch(Collector.detect_context()){
@@ -45,41 +46,20 @@ switch(Collector.detect_context()){
       //alert("hi");
       if(typeof(Collector.electron) !== "undefined"){
         clearInterval(wait_for_electron);
-        master_json = Collector.electron.read_file("","master.json");
+        master_json = Collector.electron.fs.read_file("","master.json");
         if(master_json !== ""){
           master_json = JSON.parse(master_json);
         } else {
-          master_json = {
-            "data": {
-              "servers": {}
-            },
-            "exp_mgmt":  {
-              "any_loaded": 	 		false,
-              "authenticated":   	false,
-              "current_manager": 	"",
-              "experiment":      	"",
-              "experiments":     	{},
-              "incomp_process":  	false,
-              "pipe_position": 	 	0,
-              "pipe_direction":  	"",
-              "versions" :		 		[]
-            },
-            "github": {
-              "organisation"  : "",
-              "repository"    : "",
-              "organisations" : {}
-            },
-            "mods":    {},
-            "surveys" : {},
-            "trialtypes":  {
-              "default_trialtypes"	: {},
-              "trialtype" 			    : "",
-              "filetype"  			    : "",
-              "version"   			    : 0,
-              "user_trialtypes"		  : {}
-            }
+          master_json = default_master_json;
+          var write_response = Collector.electron.fs.write_file(
+            "",
+            "master.json",
+            JSON.stringify(master_json, null, 2));
+          if(write_response !== "success"){
+            bootbox.alert(write_response);
           }
         }
+        
         Collector.start();
       }
     },100);

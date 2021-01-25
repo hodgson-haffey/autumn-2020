@@ -13,7 +13,7 @@ function online_save(experiment_id,
 	if(typeof(trial_no) == "undefined"){
 		trial_no = "_all_data";
 	}
-	
+
   data = {
     completion_code: completion_code,
     encrypted_data:  encrypted_data,
@@ -24,21 +24,21 @@ function online_save(experiment_id,
 		trial_all:       trial_all,
 		trial_no:        trial_no,
   };
-	
-	
+
+
 	//work your way through all the save scripts
 	function until_successful_script(script_list,
 																	 data,
 																	 after_function){
 		if(script_list.length > 0){
 			var save_script_url = script_list.shift();
-			
+
       function recursive_save(save_script_url,
                               data,
                               attempt_no,
                               after_function){
         if(attempt_no == 10){
-          until_successful_script(script_list,																	
+          until_successful_script(script_list,
                                   data,
                                   after_function);
         } else {
@@ -61,10 +61,12 @@ function online_save(experiment_id,
               } else {
                 attempt_no++;
                 console.dir("failed to save, attempting again");
-                recursive_save(save_script_url,
-                                      data,
-                                      attempt_no,
-                                      after_function);
+                recursive_save(
+                  save_script_url,
+                  data,
+                  attempt_no,
+                  after_function
+                );
               }
             }
           })
@@ -82,6 +84,13 @@ function online_save(experiment_id,
                      data,
                      0,
                      after_function);
+    } else {
+      /*
+      * If it is the final trial then the user needs to download their data
+      */
+      if(data.trial_no == "_all_data"){
+        precrypted_data(exp_json,"We've tried to send your data, but it has failed multiple times. Please accept the download and send it directly to the researcher. What do you want to save this file as?");
+      }
     }
 	}
 	var script_list = [];

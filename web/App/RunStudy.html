@@ -16,7 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-		Kitten release (2019-20) author: Dr. Anthony Haffey (team@someopen.solutions)
+		Kitten/Cat release (2019-21) author: Dr. Anthony Haffey (team@someopen.solutions)
 -->
 <head>
   <meta charset="utf-8">
@@ -24,7 +24,7 @@
   <meta http-equiv="Pragma" content="no-cache" />
   <meta http-equiv="Expires" content="0" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<link rel="shortcut icon" type="image/x-icon" href="../logos/kitten.png"/>
+	<link rel="shortcut icon" type="image/x-icon" href="../logos/cat.png"/>
 </head>
 
 
@@ -44,8 +44,10 @@
 <script src="Code/OnlineTriggers.js"></script>
 <script src="Code/CollectorEncrypt.js"></script>
 <script src="Code/BrowserCheck.js"></script>
+<script src="Code/MobileCheck.js"></script>
 
 <div id="welcome_html"></div>
+
 <script>
 $("#welcome_html").load("Welcome.html");
 </script>
@@ -60,13 +62,11 @@ $("#welcome_html").load("Welcome.html");
 	margin-left: auto;
 	margin-right: auto;
 }
-
 #experiment_div{
 	display: none;
 	width  : 100%;
 	margin : auto;
 }
-
 #download_json{
 	color:green;
 }
@@ -76,13 +76,17 @@ $("#welcome_html").load("Welcome.html");
 </style>
 
 
+
 <div id="post_welcome">
 	<div class="progress" style="height: 1px; position:fixed;">
 		<div id="experiment_progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
 	</div>
 
+
 	<div id="loading_div">Preparing encryption of data</div>
+
 	<div id="stim_progress" class="progress">
+
 		<div id="stim_listing" class="progress-bar progress-bar-striped progress-bar-animated bg-success" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width:0%"></div>
 	</div>
 	<div id="beginning_checks" style="display:none">
@@ -91,7 +95,7 @@ $("#welcome_html").load("Welcome.html");
 		Please click "Understood" to show that you have understood these instructions. <br><br>
 		<input type="button" value="Understood" id="proc_button">
 	</div>
-	<div id = "calibrate_div"></div>
+  <div id = "calibrate_div"></div>
 	<div id="experiment_div" scrolling="no"></div>
 </div>
 <div id="participant_country"></div>
@@ -247,30 +251,40 @@ Study = {
     response_data["post_"+exp_json.post_no+"_trial_end_ms"]              = trial_end_ms;
     response_data["post_"+exp_json.post_no+"_rt_ms"]                     = trial_end_ms - response_data["post_"+exp_json.post_no+"_trial_start_ms"];
     response_data["post_"+exp_json.post_no+"_trial_end_date"]            = new Date(parseInt(trial_end_ms, 10)).toString('MM/dd/yy HH:mm:ss');
+    response_data["platform"] = window.navigator.platform;
 
 
     Object.keys(exp_json.this_condition).forEach(function(condition_item){
       response_data["condition_" + condition_item] = exp_json.this_condition[condition_item];
     });
 
-    exp_json.this_trial                                                  = response_data;
-    response_data["participant_browser"]                                 = participant_browser;
-    response_data["trial_number"]                                        = exp_json.trial_no;
+    exp_json.this_trial                  = response_data;
+    response_data["participant_browser"] = participant_browser;
+    response_data["trial_number"]        = exp_json.trial_no;
 
-    $("#trial"+exp_json.trial_no).contents().children().find("iframe").length;
+    var not_final_trial = true;
 
-    if($("#trial"+exp_json.trial_no).contents().children().find("iframe").length == exp_json.post_no + 1){
-      //$(".trial_iframe").hide();
-      $("#trial"+exp_json.trial_no).remove(); // destroy iframe for previous trial.
+    if(
+      $("#trial"+exp_json.trial_no)
+        .contents()
+        .children()
+        .find("iframe").length == exp_json.post_no + 1
+    ){
+      $("#trial"+exp_json.trial_no).remove();
       exp_json.responses.push(exp_json.this_trial);
-      if(exp_json.trial_no == exp_json.parsed_proc.length - 1 & typeof(go_to_info) == "undefined"){
+      if(
+        exp_json.trial_no == exp_json.parsed_proc.length - 1 &
+        typeof(go_to_info) == "undefined"
+      ){
+        not_final_trial = false;
         final_trial();
       } else {
         exp_json.this_trial = {};
-        exp_json.trial_no = parseFloat(exp_json.trial_no) +1;
+        exp_json.trial_no = parseFloat(exp_json.trial_no) + 1;
         exp_json.post_no = 0;
         setTimeout(function(){
-          var this_index = parseFloat(exp_json.trial_no) + parseFloat(exp_json.this_condition.buffer) - 1;
+          var this_index = parseFloat(exp_json.trial_no) +
+            parseFloat(exp_json.this_condition.buffer) - 1;
           write_trial_iframe(this_index);
         });
         Study.start_post(go_to_info);
@@ -278,17 +292,25 @@ Study = {
     } else {
       exp_json.post_no++;
       var start_time = (new Date()).getTime();
-      exp_json.this_trial["post_"+exp_json.post_no+"_trial_start_ms"]   = (new Date()).getTime();
-      exp_json.this_trial["post_"+exp_json.post_no+"_trial_start_date"] = new Date(parseInt(start_time, 10)).toString('MM/dd/yy HH:mm:ss');
+      exp_json.this_trial[
+        "post_"+exp_json.post_no+"_trial_start_ms"
+      ] = (new Date()).getTime();
+      exp_json.this_trial[
+        "post_"+exp_json.post_no+"_trial_start_date"
+      ] = new Date(parseInt(start_time, 10)).toString('MM/dd/yy HH:mm:ss');
 
       // and then hide previous post and show next post within trial.
-      $("#trial"+exp_json.trial_no).contents().children().find("iframe").hide();
+      $("#trial"+exp_json.trial_no)
+        .contents()
+        .children()
+        .find("iframe")
+        .hide();
       Study.start_post(go_to_info);
     }
 
     switch(Study.get_vars.platform){
       case "localhost":
-        var data_response = Collector.electron.write_data(
+        var data_response = Collector.electron.fs.write_data(
           Study.get_vars.location,
             $("#participant_code").val() + "_" +
             $("#completion_code").val()  + ".csv",
@@ -301,27 +323,38 @@ Study = {
           bootbox.alert("Tell the researcher that saving data is broken:" + data_response);
         }
         break;
-			case "server":
       case "github":
-				online_data_obj.save_queue_add(
-					function(){
-						online_save(Study.get_vars.location,
-												$("#participant_code").val(),
-												$("#completion_code").val(),
-												$("#prehashed_code").val(),
-												JSON.stringify(encrypt(exp_json.public_key,
-																							 JSON.stringify([exp_json.responses[exp_json.responses.length - 1]]))), //data
-												exp_json.storage_scripts,
-												function(){
+      case "onlinepreview":
+			case "server":
+        if(not_final_trial){
+          online_data_obj.save_queue_add(
+  					function(){
+  						online_save(
+                Study.get_vars.location,
+                $("#participant_code").val(),
+                $("#completion_code").val(),
+                $("#prehashed_code").val(),
+                JSON.stringify(
+                  encrypt(
+                    exp_json.public_key,
+                    JSON.stringify(
+                      [exp_json.responses[
+                        exp_json.responses.length - 1
+                      ]]
+                    )
+                  )
+                ), //data
+                exp_json.storage_scripts,
+  							function(){
 
-												},
-												"trial",
-												exp_json.responses.length - 1);
-				});
+  							},
+                "trial",
+                exp_json.responses.length - 1
+              );
+  				});
+        }
         break
       case "preview":
-
-
         //do nothing - you are not meant to be saving;
         break;
     }
@@ -382,11 +415,33 @@ Study = {
     // in case the user forgets
     this_trialtype = this_trialtype.replaceAll("www.dropbox","dl.dropbox");
 
-    if(Study.is_exe){
-      this_trialtype = this_trialtype.replaceAll("User/","../../User/");
+    /*
+    * Need to detect whether localhost and on mac
+    */
 
+
+    if(
+      typeof(Collector.electron) !== "undefined" &&
+      window.navigator.platform.toLowerCase().indexOf("mac") !== -1
+    ){
+      var home_dir = Collector
+        .electron
+        .fs
+        .home_dir();
+        this_trialtype = this_trialtype.replaceAll(
+          "../User/",
+          home_dir + "/User/"
+        );
+    } else if(Study.is_exe){
+      var home_dir = Collector
+        .electron
+        .fs
+        .home_dir();
+      this_trialtype = this_trialtype.replaceAll(
+        "../User/",
+        home_dir + "/User/"
+      );
     }
-
 		return this_trialtype;
 	},
 
@@ -456,7 +511,7 @@ Study = {
             this_iframe_style.transformOrigin = "left top"
           } else {
             this_iframe_style.width  = "100%";
-            this_iframe_style.height = "100%";            
+            this_iframe_style.height = "100%";
           }
 
 
@@ -605,58 +660,70 @@ function detect_exe(){
 
 function final_trial(){
 	switch(Study.get_vars.platform){
-		case "github":
-    case "server": //this should be changed to preview if you do not want data saved!
+    //this should be changed to preview if you do not want data saved!
+    case "github":
+    case "onlinepreview":
+    case "server":
 			online_data_obj.save_queue_add(
 				function(){
-					online_save(Study.get_vars.location,
-                      $("#participant_code").val(),
-                      $("#completion_code").val(),
-                      $("#prehashed_code").val(),
-                      JSON.stringify(encrypt(exp_json.public_key,    //the public key
-                      JSON.stringify(exp_json.responses))),          //the data
-					exp_json.storage_scripts,
-					function(returned_data){
-						message_data = returned_data.split(" encrypted data = ");
-						if(message_data.length == 1){
-							//retrieve researcher e-mail address
-							precrypted_data(exp_json,"Problem encrypting: <b>"+ message_data +"</b>, we'll try again every 10 seconds, but in case it fails, please download and e-mail this file. What do you want to save this file as? (you will get this message each time we fail to e-mail your data to the researcher)");
-							setTimeout(function(){
-								final_trial();
-							},10000);
-						} else {
-							$("#participant_country").show();
-							$("#participant_country").load("ParticipantCountry.html");
+					online_save(
+            Study.get_vars.location,
+            $("#participant_code").val(),
+            $("#completion_code").val(),
+            $("#prehashed_code").val(),
+            JSON.stringify(
+              encrypt(
+                //the public key
+                exp_json.public_key,
+                //the data
+                JSON.stringify(exp_json.responses)
+              )
+            ),
+					  exp_json.storage_scripts,
+  					function(returned_data){
+  						message_data = returned_data.split(" encrypted data = ");
+  						if(message_data.length == 1){
+  							//retrieve researcher e-mail address
+  							precrypted_data(exp_json,"Problem encrypting: <b>"+ message_data +"</b>, we'll try again every 10 seconds, but in case it fails, please download and e-mail this file. What do you want to save this file as? (you will get this message each time we fail to e-mail your data to the researcher)");
+  							setTimeout(function(){
+  								final_trial();
+  							},10000);
+  						} else {
+  							$("#participant_country").show();
+  							$("#participant_country").load("ParticipantCountry.html");
 
-							encrypted_data = message_data[1];
+  							encrypted_data = message_data[1];
 
-							$("#experiment_div").html("<h1 class='text-primary'>" + message_data[0] + " <br><br> You can download the encrypted version of your data <span id='encrypt_click' class='text-success'>here</span> <br><br>or an unencrypted version <span id='raw_click' class='text-success'>here</span></h1>");
+  							$("#experiment_div").html("<h1 class='text-primary'>" + message_data[0] + " <br><br> You can download the encrypted version of your data <span id='encrypt_click' class='text-success'>here</span> <br><br>or an unencrypted version <span id='raw_click' class='text-success'>here</span></h1>");
 
-							$("#encrypt_click").on("click",function(){
-								bootbox.prompt({
-									title:"What do you want to save this file as?",
-									value:$("#participant_code").val()+"_encrypted.txt",
-									callback:function(result){
-										var blob = new Blob([encrypted_data], {type: 'text/csv'});
-										if(window.navigator.msSaveOrOpenBlob) {
-											window.navigator.msSaveBlob(blob, result);
-										} else {
-											var elem = window.document.createElement('a');
-											elem.href = window.URL.createObjectURL(blob);
-											elem.download = result;
-											document.body.appendChild(elem);
-											elem.click();
-											document.body.removeChild(elem);
-										}
-									}
-								});
-							});
-							$("#raw_click").on("click",function(){
-								precrypted_data(exp_json,"What do you want to save this file as?");
-							});
-							online_data_obj.finished_and_stored = true;
-						}
-					});
+  							$("#encrypt_click").on("click",function(){
+  								bootbox.prompt({
+  									title:"What do you want to save this file as?",
+  									value:$("#participant_code").val()+"_encrypted.txt",
+  									callback:function(result){
+  										var blob = new Blob([encrypted_data], {type: 'text/csv'});
+  										if(window.navigator.msSaveOrOpenBlob) {
+  											window.navigator.msSaveBlob(blob, result);
+  										} else {
+  											var elem = window.document.createElement('a');
+  											elem.href = window.URL.createObjectURL(blob);
+  											elem.download = result;
+  											document.body.appendChild(elem);
+  											elem.click();
+  											document.body.removeChild(elem);
+  										}
+  									}
+  								});
+  							});
+  							$("#raw_click").on("click",function(){
+  								precrypted_data(exp_json,"What do you want to save this file as?");
+  							});
+  							online_data_obj.finished_and_stored = true;
+  						}
+  					},
+            "all",
+            exp_json.responses.length
+          );
 				}
 			);
 
@@ -673,13 +740,13 @@ function final_trial(){
 
 			if(download_at_end == "on"){
 				$("#download_div").html("<h1 class='text-danger'>" +
-                                  "Please wait while we confirm that all your data has been saved" +
-                                "</h1>" +
-                                '<div class="progress">'+
-                                  '<div id="google_progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">' +
-                                  '</div>' +
-                                '</div>' +
-																"<h3 class='text-primary'>Please do not close this window until it has been confirmed that the researcher has been e-mailed your data (or you have downloaded the data yourself that you will e-mail the researcher). If you do not get a prompt to do this within 30 seconds, press CTRL-S and you should be able to directly download your data.</h3>");
+          "Please wait while we confirm that all your data has been saved" +
+          "</h1>" +
+          '<div class="progress">' +
+            '<div id="google_progress" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" aria-valuenow="75" aria-valuemin="0" aria-valuemax="100" style="width: 75%">' +
+            '</div>' +
+          '</div>' +
+					"<h3 class='text-primary'>Please do not close this window until it has been confirmed that the researcher has been e-mailed your data (or you have downloaded the data yourself that you will e-mail the researcher). If you do not get a prompt to do this within 30 seconds, press CTRL-S and you should be able to directly download your data.</h3>");
 
 
 			} else if(download_at_end == "off") {
@@ -813,10 +880,11 @@ function insert_end_checks(){
 }
 function insert_start(){
 
+  var this_proc  = exp_json.parsed_proc;
+
+
 
   if(Study.get_vars.platform == "preview"){
-    var this_proc  = exp_json.parsed_proc;
-
     var this_proc_calibration = {
       item:0,
       max_time:"",
@@ -834,9 +902,9 @@ function insert_start(){
     });
   } else {
 
-    // update the procedure to have a general warning
-    var this_proc  = exp_json.parsed_proc;
-
+    /*
+    * Calibration slide
+    */
     var this_proc_calibration = {
       item:0,
       max_time:"",
@@ -847,8 +915,11 @@ function insert_start(){
     shuffle_levels.forEach(function(shuffle_level){
       this_proc_calibration[shuffle_level] = "off";
     });
-
     this_proc.unshift(this_proc_calibration);
+
+    /*
+    * Warning about asking for inappropriate details
+    */
     var this_proc_detail_warning = {
       item:0,
       max_time:"",
@@ -862,6 +933,29 @@ function insert_start(){
     });
     this_proc.unshift(this_proc_detail_warning);
 
+    if(typeof(exp_json.this_condition.age_check) !== "undefined" &&
+       exp_json.this_condition.age_check.toLowerCase() == "no"){
+
+      //skip this
+    } else {
+      /*
+      * Age check
+      */
+      var this_proc_age_warning = {
+        item:0,
+        max_time:"",
+        text:"",
+        "trial type":"age_check"
+      }
+
+      var shuffle_levels = Object.keys(exp_json.parsed_proc[0]).filter(item => item.indexOf("shuffle") !== -1);
+      shuffle_levels.forEach(function(shuffle_level){
+        this_proc_age_warning[shuffle_level] = "off";
+      });
+      this_proc.unshift(this_proc_age_warning);
+    }
+
+
     // update trialtypes to have a "start" trial
     ////////////////////////////////////////////
 
@@ -869,6 +963,9 @@ function insert_start(){
       exp_json.trialtypes.start_experiment = start_experiment_html;
       $.get("Quality/Calibration.html",function(calibration_zoom_html){
         exp_json.trialtypes.calibration_zoom = calibration_zoom_html;
+        $.get("Quality/AgeCheck.html", function(age_check_html){
+          exp_json.trialtypes.age_check = age_check_html;
+        });
         Study.activate_pipe();
       });
     });
@@ -888,16 +985,17 @@ function parse_sheets(){
   proc_stim_loaded = [];
 
   switch(Study.get_vars.platform){
+    case "onlinepreview":
     case "localhost":
     case "preview":
       var folder = "Experiments/"+ Study.get_vars.location;
 
-      var proc_sheet_content = Collector.electron.read_file(
+      var proc_sheet_content = Collector.electron.fs.read_file(
         folder,
         proc_sheet_name
       );
 
-      var stim_sheet_content = Collector.electron.read_file(
+      var stim_sheet_content = Collector.electron.fs.read_file(
         folder,
         stim_sheet_name
       );
@@ -1060,6 +1158,7 @@ function post_welcome(participant_code,id_error){
   switch(Study.get_vars.platform){
     case "server":
     case "github":
+    case "onlinepreview":
     case "localhost":
     case "preview":
       id_error = "skip";
@@ -1174,13 +1273,13 @@ function process_welcome(){
 			$("#researcher_message").html(exp_json.this_condition.start_message);
 		} else {
 			def_start_msg = "<h1 class='text-primary'> Collector</h1>"+
-											"<br><br>" +
-											"<h4>It's very important to read the following before starting!</h1>" +
-											"<div class='text-danger'>If you complete multiple Collector experiments at the same time, your completion codes may be messed up. Please do not do this!</div>" +
-											"<br>" +
-											"<div class='text-danger'>If you participate in this experiment, your progress in it will be stored on your local machine to avoid you losing your progress if the window or tab closes or freezes. This data will be cleared from your computer once you have completed the task. <b>However, if you do not want this website to store your progress on your computer, DO NOT PROCEED.</b></div>"+
-											"<br>" +
-											"<div class='text-danger'>If the experiment freezes, try pressing <b>CTRL-S</b> to save your data so far. </div>";
+        "<br><br>" +
+        "<h4>It's very important to read the following before starting!</h1>" +
+        "<div class='text-danger'>If you complete multiple Collector experiments at the same time, your completion codes may be messed up. Please do not do this!</div>" +
+        "<br>" +
+        "<div class='text-danger'>If you participate in this experiment, your progress in it will be stored on your local machine to avoid you losing your progress if the window or tab closes or freezes. This data will be cleared from your computer once you have completed the task. <b>However, if you do not want this website to store your progress on your computer, DO NOT PROCEED.</b></div>"+
+				"<br>" +
+				"<div class='text-danger'>If the experiment freezes, try pressing <b>CTRL-S</b> to save your data so far. </div>";
 			$("#researcher_message").html(def_start_msg);
 		}
 	}
@@ -1191,7 +1290,7 @@ function requestFullScreen(element) {
     var requestMethod = element.requestFullScreen || element.webkitRequestFullScreen || element.mozRequestFullScreen || element.msRequestFullScreen;
 
     if (requestMethod) { // Native full screen.
-        requestMethod.call(element);
+      requestMethod.call(element);
     } else if (typeof window.ActiveXObject !== "undefined") { // Older IE.
         var wscript = new ActiveXObject("WScript.Shell");
         if (wscript !== null) {
@@ -1201,13 +1300,23 @@ function requestFullScreen(element) {
 }
 
 function select_condition(){
-	exp_json.conditions = Collector.PapaParsed(exp_json.cond_array);
-
-  exp_json.this_condition = exp_json.conditions.filter(function(row){
+  var conditions = Collector.PapaParsed(exp_json.conditions);
+  exp_json.this_condition = conditions.filter(function(row){
     return row.name == Study.get_vars.name;
   })[0];
 
-  Study.activate_pipe();
+  /*
+  * Check if use of mobile devices is off
+  */
+  if(
+    typeof(exp_json.this_condition.mobile) !== "undefined" &&
+    exp_json.this_condition.mobile.toLowerCase() == "no" &&
+    window.mobilecheck()
+  ){
+    alert("This experiment will not run on a mobile device. Please complete it on a laptop or desktop (using google chrome if possible).");
+  } else{
+    Study.activate_pipe();
+  }
 }
 
 //by Laurens Holst on https://stackoverflow.com/questions/2450954/how-to-randomize-shuffle-a-javascript-array?utm_medium=organic&utm_source=google_rich_qa&utm_campaign=google_rich_qa
@@ -1371,7 +1480,9 @@ function shuffle_start_exp(){
 }
 
 function start_restart(){
-  if(window.localStorage.getItem("exp_json") !== null &
+  if(isSafari){
+    bootbox.alert("This experiment will not run in safari. Please close and use another browser");
+  } else if(window.localStorage.getItem("exp_json") !== null &
      Study.get_vars.platform !== "preview"){
 
     bootbox.dialog({
@@ -1387,13 +1498,18 @@ function start_restart(){
             var participant_code = window.localStorage.getItem("username");
             var completion_code = window.localStorage.getItem("completion_code");
             var prehashed_code = window.localStorage.getItem("prehashed_code");
-            $("#participant_code").val(participant_code);
             $("#completion_code").val(completion_code);
             $("#prehashed_code").val(prehashed_code);
-            //post_welcome(participant_code,false);
-            //process_welcome();
-						post_welcome_data("blank");
-						//Study.activate_pipe();
+            if(participant_code == ""){
+              bootbox.prompt("What ID did you use?", function(this_participant_code){
+                participant_code = this_participant_code;
+                $("#participant_code").val(participant_code);
+                post_welcome_data("blank");
+              });
+            } else {
+              $("#participant_code").val(participant_code);
+              post_welcome_data("blank");
+            }
   				}
         },
   			start: {
@@ -1428,14 +1544,16 @@ function start_study(){
 
 	if(Object.keys(exp_json) == 0){
 		switch(Study.get_vars.platform){
-			case "localhost":
+      case "onlinepreview":
+      case "localhost":
       case "preview":
         electron_wait = setInterval(function(){
-          if(typeof(Collector.electron.read_file) !== "undefined"){
+          if(typeof(Collector.electron.fs.read_file) !== "undefined"){
             clearInterval(electron_wait);
             exp_json = JSON.parse(
               Collector
                 .electron
+                .fs
                 .read_file(
                   "Experiments",
                   Study
@@ -1455,10 +1573,27 @@ function start_study(){
 						Study.activate_pipe();
 					});
 				} else {
-					$.get("../User/Experiments/" + Study.get_vars.location + ".json",function(result){
-						exp_json = result;
-						Study.activate_pipe();
-					});
+          /*
+          * wrap into function that will automatically keep trying until you have succesfully loaded the experiment!
+          */
+          function recursive_load_experiment(random_code){
+            if(typeof(random_code) == "undefined"){
+              random_code = "";
+            }
+            $.get("../User/Experiments/" + Study.get_vars.location + ".json?randomcode=" + random_code,function(result){
+              exp_json = result;
+              Study.activate_pipe();
+            })
+            .catch(function(error){
+              bootbox.confirm("It looks like the experiment you're trying to load isn't there (yet) - click OK if you'd like to try to load the experiment again (clicking OK can be quicker than constantly refreshing the page)?", function(result){
+                if(result){
+                  recursive_load_experiment(Collector.makeid(5));
+                }
+              });
+              console.dir(error);
+            });
+          }
+          recursive_load_experiment();
 				}
 				break;
 			default:
@@ -1586,16 +1721,22 @@ $(window).bind('keydown', function(event) {
 
 //prevent closing without warning
 window.onbeforeunload = function() {
+  switch(Study.get_vars.platform){
+    case "onlinepreview":
+    case "localhost":
+      break;
+    default:
+      if(online_data_obj.finished_and_stored == false){
+        bootbox.confirm("Would you like to leave the experiment early? If you didn't just download your data there's a risk of you losing your progress.",function(result){
+          if(result){
+            online_data_obj.finished_and_stored = true; //even though it's not
+          }
+        });
+        precrypted_data(exp_json,"It looks like you're trying to leave the experiment before you're finished (or at least before the data has been e-mailed to the researcher. Please choose a filename to save your data as and e-mail it to the researcher. It should appear in your downloads folder.");
 
-  if(online_data_obj.finished_and_stored == false){
-    bootbox.confirm("Would you like to leave the experiment early? If you didn't just download your data there's a risk of you losing your progress.",function(result){
-      if(result){
-        online_data_obj.finished_and_stored = true; //even though it's not
+        return "Please do not try to refresh - you will have to restart if you do so.";
       }
-    });
-    precrypted_data(exp_json,"It looks like you're trying to leave the experiment before you're finished (or at least before the data has been e-mailed to the researcher. Please choose a filename to save your data as and e-mail it to the researcher. It should appear in your downloads folder.");
-
-    return "Please do not try to refresh - you will have to restart if you do so.";
+      break;
   }
 };
 $("body").css("text-align","center");

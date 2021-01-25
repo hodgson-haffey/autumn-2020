@@ -16,7 +16,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-		Kitten release (2019) author: Dr. Anthony Haffey (team@someopen.solutions)
+		Kitten/Cat release (2019-2021) author: Dr. Anthony Haffey (team@someopen.solutions)
 */
 -->
 <style>
@@ -57,6 +57,7 @@
 			<select id="proc_select"></select>
 			<button type="button" id="new_proc_button" class="btn btn-primary">New Sheet</button>
 			<button type="button" id="rename_proc_button" class="btn btn-primary">Rename Sheet</button>
+      <button type="button" id="delete_proc_button" class="btn btn-primary">Delete</button>
 			<span id="procsArea">
 				<div id="procSheetTable"></div>
 			</span>
@@ -71,8 +72,12 @@
 			<h3>Stimuli</h3>
 			<select id="stim_select"></select>
 			<button type="button" id="new_stim_button" class="btn btn-primary">New Sheet</button>
-			<button type="button" id="rename_stim_button" class="btn btn-primary">Rename Sheet</button>
-			<button type="button" id="stim_list_button" class="btn btn-primary">List Stimuli</button>
+
+      <button type="button" id="rename_stim_button" class="btn btn-primary">Rename Sheet</button>
+      <button type="button" id="delete_stim_button" class="btn btn-primary">Delete</button>
+      <button type="button" id="stim_list_button" class="btn btn-primary">List Stimuli</button>
+      <button type="button" id="stim_folder_button" class="btn btn-primary">Stimuli Folder</button>
+
 			<span id="stimsArea">
 				<div id="stimsheetTable"></div>
 			</span>
@@ -83,6 +88,11 @@
 <script src="Studies/SheetEditor/SheetActions.js"></script>
 
 <script>
+
+$("#stim_folder_button").on("click",function(){
+  Collector.electron.open_folder("User/Stimuli");
+});
+
 $("#stim_list_button").on("click",function(){
   var web_url = document.URL.split("/");
       web_url[web_url.length - 1] = "Studies/SheetEditor/StimList.html";

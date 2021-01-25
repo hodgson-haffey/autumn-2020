@@ -15,7 +15,7 @@
     You should have received a copy of the GNU General Public License
     along with this program.  If not, see <http://www.gnu.org/licenses/>
 
-		Kitten release (2019-2020) author: Dr. Anthony Haffey (team@someopen.solutions)
+		Kitten/Cat release (2019-2020) author: Dr. Anthony Haffey (team@someopen.solutions)
 */
 $("#default_experiments_select").on("change",function(){
 	if($("#default_experiments_select").val() !== "Select an experiment"){
@@ -24,6 +24,7 @@ $("#default_experiments_select").on("change",function(){
 });
 
 $("#delete_exp_btn").on("click",function(){
+
 	var exp_name = $("#experiment_list").val();
 	if(exp_name == null){
 		bootbox.alert("You need to select a study to delete it");
@@ -37,7 +38,7 @@ $("#delete_exp_btn").on("click",function(){
 						.then(function(response) {
               $('#experiment_list option:contains('+ exp_name +')')[0].remove();
 							if(document.getElementById('experiment_list').options[0] !== undefined){
-								$("#experiment_list").val(document.getElementById('experiment_list').options[0].value);
+								$("#experiment_list").val(document.getElementById('experiment_list').options[1].value);
 							}
 							Collector.custom_alert(exp_name + " succesfully deleted");
 							update_master_json();
@@ -49,7 +50,7 @@ $("#delete_exp_btn").on("click",function(){
 						});
 				} else {
 					$('#experiment_list option:contains('+ exp_name +')')[0].remove();
-					$("#experiment_list").val(document.getElementById('experiment_list').options[0].value);
+					$("#experiment_list").val(document.getElementById('experiment_list').options[1].value);
 					Collector.custom_alert(exp_name +" succesfully deleted");
 					update_master_json();
 					update_handsontables();
@@ -58,6 +59,7 @@ $("#delete_exp_btn").on("click",function(){
 					if(Collector.detect_context() == "localhost"){
 						Collector
 							.electron
+              .fs
 							.delete_experiment(exp_name,
 								function(response){
 									if(response !== "success"){
@@ -70,6 +72,126 @@ $("#delete_exp_btn").on("click",function(){
 			}
 		});
 	}
+});
+
+
+$("#delete_proc_button").on("click",function(){
+  if($("#proc_select option").length <2 ){
+    bootbox.alert("This would mean you have no procedure sheets. Please just edit the current sheet rather than deleting it.");
+  } else {
+    bootbox.confirm("Are you sure you want to delete this procedure sheet?",function(result){
+      if(!result){
+        // do nothing
+      } else {
+        /*
+        * delete from master_json
+        */
+        var experiment = $("#experiment_list").val();
+        var proc_file  = $("#proc_select").val();
+        delete(
+          master_json
+            .exp_mgmt
+            .experiments
+            [experiment]
+            .all_procs[proc_file]
+        );
+        delete(
+          master_json
+            .exp_mgmt
+            .experiments
+            [experiment]
+            .parsed_procs[proc_file]
+        );
+
+        delete(
+          master_json
+            .exp_mgmt
+            .experiments
+            [experiment]
+            .procs_csv[proc_file]
+        );
+
+        // update the lists
+        update_handsontables();
+
+        /*
+        * Delete the file locally if in electron
+        */
+        var file_path = "Experiments" + "/" +
+                          experiment  + "/" +
+                          proc_file
+        if(Collector.detect_context() == "localhost"){
+          var this_response = Collector
+            .electron
+            .fs
+            .delete_file(
+              file_path
+            );
+          if(this_response !== "success"){
+            bootbox.alert(this_response);
+          } else {
+            Collector.custom_alert(this_response);
+          }
+        }
+      };
+    });
+  }
+});
+
+$("#delete_stim_button").on("click",function(){
+  if($("#stim_select option").length <2 ){
+    bootbox.alert("This would mean you have no stimuli sheets. Please just edit the current sheet rather than deleting it.");
+  } else {
+    bootbox.confirm("Are you sure you want to delete this stimuli sheet?",function(result){
+      if(!result){
+        // do nothing
+      } else {
+        /*
+        * delete from master_json
+        */
+        var experiment = $("#experiment_list").val();
+        var stim_file  = $("#stim_select").val();
+        delete(
+          master_json
+            .exp_mgmt
+            .experiments
+            [experiment]
+            .all_stims[stim_file]
+        );
+
+        delete(
+          master_json
+            .exp_mgmt
+            .experiments
+            [experiment]
+            .stims_csv[stim_file]
+        );
+
+        // update the lists
+        update_handsontables();
+
+        /*
+        * Delete the file locally if in electron
+        */
+        var file_path = "Experiments" + "/" +
+                          experiment  + "/" +
+                          stim_file
+        if(Collector.detect_context() == "localhost"){
+          var this_response = Collector
+            .electron
+            .fs
+            .delete_file(
+              file_path
+            );
+          if(this_response !== "success"){
+            bootbox.alert(this_response);
+          } else {
+            Collector.custom_alert(this_response);
+          }
+        }
+      };
+    });
+  }
 });
 
 $("#download_experiment_button").on("click",function(){
@@ -150,131 +272,135 @@ $("#proc_select").on("change",function(){
 
 $("#rename_exp_btn").on("click",function(){
 	bootbox.prompt("What would you like to rename this experiment to?",function(new_name){
-		if($("#experiment_list").text().indexOf(new_name) !== -1){
-			bootbox.alert("You already have an experiment with this name");
-		} else { //proceed
-			var original_name = $("#experiment_list").val();
-      master_json.exp_mgmt.experiments[new_name] = master_json.exp_mgmt.experiments[original_name];
-      delete(master_json.exp_mgmt.experiments[original_name]);
+    if(new_name){
+      if($("#experiment_list").text().indexOf(new_name) !== -1){
+  			bootbox.alert("You already have an experiment with this name");
+  		} else { //proceed
+  			var original_name = $("#experiment_list").val();
+        master_json.exp_mgmt.experiments[new_name] = master_json.exp_mgmt.experiments[original_name];
+        delete(master_json.exp_mgmt.experiments[original_name]);
 
-      switch(Collector.detect_context()){
-        case "localhost":
-					Collector
-						.electron
-						.write_experiment(
-							new_name,
-  						JSON.stringify(
-								master_json.exp_mgmt.experiments[new_name],
-								null,
-								2
-							),
-							function(response){
-								if(response == "success"){
-									Collector
-										.electron
-										.delete_experiment(
-											original_name,
-											function(response){
-												if(response == "success"){
-													update_master_json();
-								          list_studies();
-								          $("#experiment_list").val(new_name);
-								          $("#experiment_list").change();
-												} else {
-													bootbox.alert(response);
-												}
-											}
-										)
-								} else {
-									bootbox.alert(response);
-								}
-							}
-						);
-          break;
-      }
-      if(typeof(dbx) !== "undefined"){
-        dbx.filesMove({
-          from_path: "/Experiments/" +
-                       original_name +
-                       ".json",
-          to_path:  "/Experiments/" +
-                      new_name +
-                      ".json"
-        })
-          .then(function(result){
-						update_master_json();
-						list_studies();
-						$("#experiment_list").val(new_name);
+        switch(Collector.detect_context()){
+          case "localhost":
+  					Collector
+  						.electron
+              .fs
+  						.write_experiment(
+  							new_name,
+    						JSON.stringify(
+  								master_json.exp_mgmt.experiments[new_name],
+  								null,
+  								2
+  							),
+  							function(response){
+  								if(response == "success"){
+  									Collector
+  										.electron
+                      .fs
+  										.delete_experiment(
+  											original_name,
+  											function(response){
+  												if(response == "success"){
+  													update_master_json();
+  								          list_studies();
+  								          $("#experiment_list").val(new_name);
+  								          $("#experiment_list").change();
+  												} else {
+  													bootbox.alert(response);
+  												}
+  											}
+  										)
+  								} else {
+  									bootbox.alert(response);
+  								}
+  							}
+  						);
+            break;
+        }
+        if(typeof(dbx) !== "undefined"){
+          dbx.filesMove({
+            from_path: "/Experiments/" +
+                         original_name +
+                         ".json",
+            to_path:  "/Experiments/" +
+                        new_name +
+                        ".json"
           })
-          .catch(function(error){
-            Collector.tests.report_error("problem moving an experiment", "problem moving an experiment");
-          });
-      }
-		}
+            .then(function(result){
+  						update_master_json();
+  						list_studies();
+  						$("#experiment_list").val(new_name);
+            })
+            .catch(function(error){
+              Collector.tests.report_error("problem moving an experiment", "problem moving an experiment");
+            });
+        }
+  		}
+    }
 	});
 });
 
 $("#rename_proc_button").on("click",function(){
 	bootbox.prompt("What do you want to rename this <b>Procedure</b> sheet to?",function(new_proc_name){
-		var experiment = $("#experiment_list").val();
-		var this_exp   = master_json.exp_mgmt.experiments[experiment];
+    if(new_proc_name){
+      new_proc_name = new_proc_name.toLowerCase();
+  		var experiment = $("#experiment_list").val();
+  		var this_exp   = master_json.exp_mgmt.experiments[experiment];
+  		var current_procs = Object.keys(this_exp.all_procs);
+  		var current_proc = $("#proc_select").val();
+  		    current_procs.splice(current_procs.indexOf(current_proc), 1);
+  		var current_proc_sheet = this_exp.all_procs[current_proc];
 
-		var current_procs = Object.keys(this_exp.all_procs);
-		var current_proc = $("#proc_select").val();
-		current_procs.splice(current_procs.indexOf(current_proc), 1);
+  		if(current_procs.indexOf(new_proc_name) !== -1){
+  			bootbox.alert("You already have a procedure sheet with that name");
+  		} else {
+  			new_proc_name = new_proc_name.replace(".csv","") + ".csv";
+  			master_json.exp_mgmt.experiments[experiment].all_procs[new_proc_name] = current_proc_sheet;
 
-		var current_proc_sheet = this_exp.all_procs[current_proc];
-
-		if(current_procs.indexOf(new_proc_name) !== -1){
-			bootbox.alert("You already have a procedure sheet with that name");
-		} else {
-			new_proc_name = new_proc_name.replace(".csv","") + ".csv";
-
-			master_json.exp_mgmt.experiments[experiment].all_procs[new_proc_name] = current_proc_sheet;
-
-			delete(master_json.exp_mgmt.experiments[experiment].all_procs[current_proc]);
-
-			$("#proc_select").append($('<option>', {
-				text : new_proc_name
-			}));
-			$("#proc_select").val(new_proc_name);
-
-			$('#stim_select option[value="' + current_proc + '"]').remove();
-
-			createExpEditorHoT(this_exp.all_procs[new_proc_name],"procedure",new_proc_name);	//sheet_name
-		}
+  			delete(master_json.exp_mgmt.experiments[experiment].all_procs[current_proc]);
+        $("#proc_select").append($('<option>', {
+  				text : new_proc_name
+  			}));
+  			$("#proc_select").val(new_proc_name);
+  			$('#proc_select option[value="' + current_proc + '"]').remove();
+  			createExpEditorHoT(this_exp.all_procs[new_proc_name],"procedure",new_proc_name);
+  		}
+    }
 	});
 });
 
 $("#rename_stim_button").on("click",function(){
 	bootbox.prompt("What do you want to rename this <b>Stimuli</b> sheet to?",function(new_sheet_name){
-		var experiment = $("#experiment_list").val();
-		var this_exp   = master_json.exp_mgmt.experiments[experiment];
+    if(new_sheet_name){
+      new_sheet_name = new_sheet_name.toLowerCase();
+      var experiment = $("#experiment_list").val();
+  		var this_exp   = master_json.exp_mgmt.experiments[experiment];
 
-		var current_stims = Object.keys(this_exp.all_stims);
-		var current_stim = $("#stim_select").val();
-		current_stims.splice(current_stims.indexOf(current_stim), 1);
+  		var current_stims = Object.keys(this_exp.all_stims);
+  		var current_stim = $("#stim_select").val();
+  		current_stims.splice(current_stims.indexOf(current_stim), 1);
 
-		var current_stim_sheet = this_exp.all_stims[current_stim];
+  		var current_stim_sheet = this_exp.all_stims[current_stim];
 
-		if(current_stims.indexOf(new_sheet_name) !== -1){
-			bootbox.alert("You already have a <b>Stimuli</b> sheet with that name");
-		} else {
-			new_sheet_name = new_sheet_name.replace(".csv","") + ".csv";
+  		if(current_stims.indexOf(new_sheet_name) !== -1){
+  			bootbox.alert("You already have a <b>Stimuli</b> sheet with that name");
+  		} else {
+  			new_sheet_name = new_sheet_name.replace(".csv","") + ".csv";
 
-			master_json.exp_mgmt.experiments[experiment].all_stims[new_sheet_name] = current_stim_sheet;
+  			master_json.exp_mgmt.experiments[experiment].all_stims[new_sheet_name] = current_stim_sheet;
 
-			delete(master_json.exp_mgmt.experiments[experiment].all_stims[current_stim]);
+  			delete(master_json.exp_mgmt.experiments[experiment].all_stims[current_stim]);
 
-			$("#stim_select").append($('<option>', {
-				text : new_sheet_name
-			}));
-			$("#stim_select").val(new_sheet_name);
+  			$("#stim_select").append($('<option>', {
+  				text : new_sheet_name
+  			}));
+  			$("#stim_select").val(new_sheet_name);
 
-			$('#stim_select option[value="' + current_stim + '"]').remove();
+  			$('#stim_select option[value="' + current_stim + '"]').remove();
 
-			createExpEditorHoT(this_exp.all_stims[new_sheet_name],"stimuli",new_sheet_name);	//sheet_name
-		}
+  			createExpEditorHoT(this_exp.all_stims[new_sheet_name],"stimuli",new_sheet_name);
+  		}
+    }
 	});
 });
 
@@ -282,13 +408,13 @@ $("#run_btn").on("click",function(){
 	var experiment = $("#experiment_list").val();
 	var exp_json = master_json.exp_mgmt.experiments[experiment];
 	var select_html = '<select id="select_condition" class="custom-select">';
-	if(typeof(exp_json.conditions) == "undefined"){
-		exp_json.conditions = Collector.PapaParsed(exp_json.cond_array);
-		exp_json.conditions = exp_json.conditions.filter(function(condition){
+  var conditions = Collector.PapaParsed(exp_json.conditions);
+	if(typeof(conditions) == "undefined"){
+		conditions = conditions.filter(function(condition){
 			return condition.name !== "";
 		});
 	}
-	exp_json.conditions.forEach(function(condition){
+	conditions.forEach(function(condition){
 		select_html += "<option>" + condition.name + "</option>";
 	});
 	select_html += "</select>";
@@ -310,7 +436,7 @@ $("#run_btn").on("click",function(){
 							master_json.exp_mgmt.exp_condition = $("#select_condition").val();
 
 							var this_url = window.location.href.split("/" + Collector.version)[0] +
-																												"/" + Collector.version + "/";
+																												"/App/";
 							window.open(this_url  	+ "RunStudy.html?platform=github&" +
 													"location=" + $("#experiment_list").val() + "&" +
 													"name="     + master_json.exp_mgmt.exp_condition + "&" +
@@ -340,34 +466,48 @@ $("#run_btn").on("click",function(){
 				//test here for whether there is a github repository linked
 				master_json.data.save_script == ""){
 
+        /* might reinstate this later if it becomes helpful
 				bootbox.prompt("You currently have no link that saves your data. Please follow the instructions in the tutorial (to be completed), and then copy the link to confirm where to save your data below:",function(this_url){
 					if(this_url){
 						master_json.data.save_script = this_url;
 						$("#save_btn").click();
 					}
 				});
+        */
 			}
-      if(master_json.github.organisation !== ""){
-        var organisation = master_json.github.organisation;
+      if(typeof(github_json) == "undefined"){
+        try{
+          github_json = JSON.parse(Collector.electron.git.load_master());
+          var organization = github_json.organization;
+          var repository   = github_json.repository;
+        } catch(error){
+          organization = "Your github json seems broken";
+          repository = "";
+        }
       } else {
-        var organisation = master_json.github.username;
+        var organization = github_json.organization;
+        var repository   = github_json.repository;
       }
-      var github_url =  "https://" +
-                        organisation +
-                        ".github.io/" +
-                        master_json.github.repository + "/" +
-                        Collector.version +
-                        "/" +  "RunStudy.html?platform=github&" +
-      															"location=" + $("#experiment_list").val() + "&" +
-      															"name="     + master_json.exp_mgmt.exp_condition;
+
+      var github_url =  "https://"                          +
+                        organization                        +
+                        ".github.io"                        + "/" +
+                        repository                          + "/" +
+                        "web"                               + "/" +
+                        "App"                               + "/" +
+                        "RunStudy.html?platform=github&"    +
+												"location="                         +
+                          $("#experiment_list").val() + "&" +
+												"name="                             +
+                          conditions[0].name;
 
 
 			bootbox.dialog({
 				title:"Select a Condition",
-				message: "Which condition would you like to run? <br><br>" + select_html + "<br><br> Online link copy the following into a browser:<br>(make sure you've pushed the latest changes and waited 5+ minutes) <input class='form-control' value='" + github_url + "' onfocus='this.select();'>",
+				message: "Which condition would you like to run? <br><br>" + select_html + "<br><br>Copy the following into a browser:<br>(make sure you've pushed the latest changes and waited 5+ minutes) <input class='form-control' value='" + github_url + "' onfocus='this.select();' id='experiment_url_input'>",
 				buttons: {
 					local:{
-						label: "Run (will save data)",
+						label: "Run",
 						className: 'btn-primary',
 						callback: function(){
               window.open("RunStudy.html?platform=localhost&" +
@@ -376,11 +516,20 @@ $("#run_btn").on("click",function(){
                           "_blank");
 						}
 					},
-					preview:{
-						label: "Preview",
-						className: 'btn-primary',
+					local_preview:{
+						label: "Preview Local",
+						className: 'btn-info',
 						callback: function(){
 							window.open("RunStudy.html?platform=preview&" +
+													"location=" + $("#experiment_list").val() + "&" +
+													"name=" + $("#select_condition").val(),"_blank");
+						}
+					},
+          online_preview:{
+						label: "Preview Online",
+						className: 'btn-info',
+						callback: function(){
+							window.open("RunStudy.html?platform=onlinepreview&" +
 													"location=" + $("#experiment_list").val() + "&" +
 													"name=" + $("#select_condition").val(),"_blank");
 						}
@@ -394,6 +543,21 @@ $("#run_btn").on("click",function(){
 					}
 				}
 			});
+      $("#select_condition").on("change",function(){
+        $("#experiment_url_input").val(
+          "https://"                            +
+            organization                        +
+            ".github.io"                        + "/" +
+            github_json.repository              + "/" +
+            "web"                               + "/" +
+            "App"                               + "/" +
+            "RunStudy.html?platform=github&"    +
+						"location="                         +
+              $("#experiment_list").val() + "&" +
+						"name="                             +
+            $("#select_condition").val()
+        );
+      });
 			break;
 	}
 
@@ -402,9 +566,60 @@ $("#run_btn").on("click",function(){
 $("#save_btn").attr("previousValue","");
 
 $("#save_btn").on("click", function(){
-  function process_parsed_procs(this_exp){
-    Object.keys(this_exp.parsed_procs).forEach(function(proc_name){
-      this_proc = this_exp.parsed_procs[proc_name];
+
+  function process_conditions(this_exp){
+    /*
+    * detect if conditions needs to be unparsed
+    */
+    try{
+      this_exp.conditions = Papa.unparse(this_exp.conditions);
+    } catch(error){
+      //do nothing yet
+    } finally {
+      var parsed_conditions = Collector.PapaParsed(this_exp.conditions);
+      parsed_conditions.map(function(row){
+        row.name = row.name.replaceAll(" ","_")
+        row.name = row.name.replaceAll(" ","_");
+      	row.name = row.name.replaceAll("-","_");
+      	row.name = row.name.replaceAll("@","_at_");
+      	row.name = row.name.replaceAll(".","_dot_");
+      	row.name = row.name.replaceAll("/","_forward_slash_");
+      	row.name = row.name.replaceAll("\\","_back_slash");
+      	row.name = row.name.replaceAll("'","_single_quote_");
+      	row.name = row.name.replaceAll('"',"_double_quote_");
+      	row.name = row.name.replaceAll('|',"_pipe_");
+      	row.name = row.name.replaceAll('?',"_question_");
+      	row.name = row.name.replaceAll('#',"_hash_");
+      	row.name = row.name.replaceAll(',',"_comma_");
+      	row.name = row.name.replaceAll('[',"_square_open_");
+      	row.name = row.name.replaceAll(']',"_square_close_");
+      	row.name = row.name.replaceAll('(',"_bracket_open_");
+      	row.name = row.name.replaceAll(')',"_bracket_close_");
+      	row.name = row.name.replaceAll('*',"__");
+      	row.name = row.name.replaceAll('^',"__");
+        row.name = row.name.replaceAll(':',"__");
+      	row.name = row.name.replaceAll(';',"__");
+      	row.name = row.name.replaceAll('%',"__");
+      	row.name = row.name.replaceAll('$',"__");
+      	row.name = row.name.replaceAll('£',"__");
+      	row.name = row.name.replaceAll('!',"__");
+      	row.name = row.name.replaceAll('`',"__");
+      	row.name = row.name.replaceAll('+',"__");
+      	row.name = row.name.replaceAll('=',"__");
+      	row.name = row.name.replaceAll('<',"__");
+      	row.name = row.name.replaceAll('>',"__");
+      	row.name = row.name.replaceAll('~',"__");
+
+        return row;
+      });
+      this_exp.conditions = Papa.unparse(parsed_conditions);
+      return this_exp;
+    };
+  }
+
+  function process_procs(this_exp){
+    Object.keys(this_exp.all_procs).forEach(function(proc_name){
+      this_proc = Collector.PapaParsed(this_exp.all_procs[proc_name]);
       this_proc.forEach(function(proc_row){
         proc_row = Collector.clean_obj_keys(proc_row);
         // survey check
@@ -454,14 +669,15 @@ $("#save_btn").on("click", function(){
   }
   function process_trialtypes(this_exp){
     var trialtypes = [];
-    Object.keys(this_exp.parsed_procs).forEach(function(proc_name){
+    Object.keys(this_exp.all_procs).forEach(function(proc_name){
+      var this_proc = Collector.PapaParsed(this_exp.all_procs[proc_name]);
       var cleaned_parsed_proc = [];
-      this_exp.parsed_procs[proc_name].forEach(function(row){
+      this_proc.forEach(function(row){
         if(Object.values(row).join("") !== ""){
           cleaned_parsed_proc.push(row);
         }
       });
-      this_exp.parsed_procs[proc_name] = cleaned_parsed_proc.map(function(row,row_index){
+      this_proc = cleaned_parsed_proc.map(function(row,row_index){
         var cleaned_row = Collector.clean_obj_keys(row);
         if(trialtypes.indexOf(cleaned_row["trial type"]) == -1){
           trialtypes.push(cleaned_row["trial type"].toLowerCase());
@@ -497,14 +713,16 @@ $("#save_btn").on("click", function(){
         }
         return cleaned_row;
       });
+      this_exp.all_procs[proc_name] = Papa.unparse(this_proc);
     });
     trialtypes = trialtypes.filter(Boolean); //remove blanks
     if(typeof(this_exp.trialtypes) == "undefined"){
       this_exp.trialtypes = {};
     }
 
-    // First loop is to make sure the experiment has all the trialtypes
-    ///////////////////////////////////////////////////////////////////
+    /*
+    * First loop is to make sure the experiment has all the trialtypes
+    */
     trialtypes.forEach(function(trialtype){
       if(typeof(master_json.trialtypes.user_trialtypes[trialtype]) == "undefined"){
         this_exp.trialtypes[trialtype] = master_json.trialtypes.default_trialtypes[trialtype];
@@ -515,10 +733,11 @@ $("#save_btn").on("click", function(){
     return this_exp;
   }
 
-  try{
+  //try{
     $("#save_trial_type_button").click();
     $("#save_survey_btn").click();
     $("#save_snip_btn").click();
+    $("#save_pathway_btn").click();
 
     if(typeof(master_json.keys) == "undefined" ||
        typeof(master_json.keys.public_key) == "undefined"){
@@ -529,20 +748,51 @@ $("#save_btn").on("click", function(){
     /*
     * Only try to save an experiment if there is a valid experiment loaded
     */
-    if(typeof(experiment) !== "undefined"){
+    if(typeof(experiment) !== "undefined" &
+       experiment !== null){
+
       var this_exp 	 = master_json.exp_mgmt.experiments[experiment];
+
+      /*
+      * Cleaning the exp_json of deprecated properties
+      */
+      delete(this_exp.conditions_csv);
+      delete(this_exp.cond_array);
+
+      delete(this_exp.parsed_procs);
+      delete(this_exp.procedure);
+      delete(this_exp.procs_csv);
+
+      delete(this_exp.stimuli);
+      delete(this_exp.stims_csv);
+
+      /*
+      * converting procs and stims to csv rather than json formats
+      */
 
       if(typeof(this_exp) !== "undefined"){
         this_exp.public_key   = master_json.keys.public_key;
       }
       //parse procs for survey saving next
       if($("#experiment_list").val() !== null) {
-        console.dir('$("#experiment_list").val()');
-        console.dir($("#experiment_list").val());
-        this_exp.parsed_procs = {};
-        var procs = Object.keys(this_exp.all_procs);
-        procs.forEach(function(proc){
-          this_exp.parsed_procs[proc] = Papa.parse(Papa.unparse(this_exp.all_procs[proc]),{header:true}).data;
+        Object.keys(this_exp.all_procs).forEach(function(proc){
+          try{
+            this_exp.all_procs[proc] = Papa.unparse(
+              this_exp.all_procs[proc]
+            );
+          } catch(error) {
+
+          }
+        });
+
+        Object.keys(this_exp.all_stims).forEach(function(stim){
+          try{
+            this_exp.all_stims[stim] = Papa.unparse(
+              this_exp.all_stims[stim]
+            );
+          } catch(error){
+
+          }
         });
 
         //add surveys to experiment
@@ -550,28 +800,19 @@ $("#save_btn").on("click", function(){
           this_exp.surveys = {};
         }
 
-
-        this_exp = process_parsed_procs(this_exp);
-        this_exp = process_trialtypes(this_exp)
+        this_exp = process_conditions(this_exp);
+        this_exp = process_procs(this_exp);
+        this_exp = process_trialtypes(this_exp);
 
         switch(Collector.detect_context()){
           case "localhost":
             this_exp.procs_csv = {};
   					this_exp.stims_csv = {};
 
-  					this_exp.conditions_csv = Papa.unparse(
-  						this_exp.cond_array
-  					);
-            Object.keys(this_exp.all_procs).forEach(function(this_proc){
-              this_exp.procs_csv[this_proc] = Papa.unparse(this_exp.all_procs[this_proc]);
-            });
-
-  					Object.keys(this_exp.all_stims).forEach(function(this_stim){
-              this_exp.stims_csv[this_stim] = Papa.unparse(this_exp.all_stims[this_stim]);
-            });
   					this_exp = JSON.stringify(this_exp, null, 2);
   					Collector
   						.electron
+              .fs
   						.write_experiment(
   							experiment,
   							this_exp,
@@ -582,10 +823,14 @@ $("#save_btn").on("click", function(){
   							}
   						)
               update_master_json();
-              var write_response = Collector.electron.write_file(
+
+
+              var git_json_response = Collector.electron.git.save_master();
+              var write_response = Collector.electron.fs.write_file(
                 "",
       					"master.json",
-      					JSON.stringify(master_json, null, 2));
+      					JSON.stringify(master_json, null, 2)
+							);
       			  if(write_response !== "success"){
       					bootbox.alert(response);
       				} else {
@@ -621,16 +866,36 @@ $("#save_btn").on("click", function(){
             break;
         }
       }
+    } else {
+      switch(Collector.detect_context()){
+        case "localhost":
+          var git_json_response = Collector.electron.git.save_master();
+
+          var write_response = Collector.electron.fs.write_file(
+            "",
+            "master.json",
+            JSON.stringify(master_json, null, 2));
+          if(write_response !== "success"){
+            bootbox.alert(response);
+          } else {
+            Collector.custom_alert(
+              "Succesfully saved master_json"
+            )
+          }
+          var git_json_response = Collector.electron.git.save_master();
+      };
     }
 
     Collector.tests.pass("studies",
                          "save_at_start");
+
+  /*
   }  catch (error){
     Collector.tests.fail("studies",
                          "save_at_start",
                          error);
   }
-
+  */
 });
 
 $("#stim_select").on("change",function(){

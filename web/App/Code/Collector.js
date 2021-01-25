@@ -92,6 +92,14 @@ Collector = {
 			return "server";
 		}
 	},
+  detect_exe: function(){
+    $.get("../User/master.json",function(result){
+      Collector.is_exe = false;
+    }).catch(function(error){
+      Collector.is_exe = true;
+      console.log("the error above just means that you are using this as an app rather than online");
+    });
+  },
 	download_file: function(filename,content,type){
 		var blob = new Blob([content], {type: 'text/' + type});
 		if(window.navigator.msSaveOrOpenBlob) {
@@ -121,7 +129,7 @@ Collector = {
 		mod_html = split_trialtype.join("{{");
 		return variables;
 	},
-	PapaParsed(content){
+	PapaParsed: function(content){
 		//check if parsed stylesheet
 		if(typeof(content) == "object"){
 			post_parsed = Papa.parse(Papa.unparse(content),{
@@ -146,6 +154,18 @@ Collector = {
 				skipEmptyLines:true
 			}).data;
 		}
+    /*
+    * remove blank row(s)
+    */
+    post_parsed = post_parsed.filter(function(row){
+      var not_empty = 0;
+      Object.keys(row).forEach(function(key){
+        if(row[key] !== ""){
+          not_empty++;
+        }
+      });
+      return not_empty > 0;
+    });
 		return post_parsed;
 	},
 	save_data: function(filename, data) {
@@ -161,8 +181,13 @@ Collector = {
 			document.body.removeChild(elem);
 		}
 	},
-	version: "kitten"
+	version: "cat"
 };
+
+/*
+* Need to run this ASAP to have this info available later.
+*/
+Collector.detect_exe();
 
 //////////////////////
 // online solutions //
